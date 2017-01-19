@@ -1,0 +1,26 @@
+_BioNetInit: CODE, 903 0 15
+_IsOKChecksum: CODE, 574 0 50
+_IsOKVarIsForUs: CODE, 720 0 47
+_DC24It10ms: CODE, 827 0 22
+_Hdw_AdcIsOkReadAna: CODE, 1066 0 7
+_IsOk_CallBackRead: CODE, 624 0 49
+_HdwUartInit: CODE, 870 0 18
+_BioNetRxInt: CODE, 245 0 149
+_main: CODE, 673 0 47
+_CalculChecksumAndSend: CODE, 523 0 51
+_BioNetRazFlag: CODE, 1050 0 8
+_pGetVafConf: CODE, 394 0 68
+__initialization: CODE, 74 0 6
+i1_BioNetRazFlag: CODE, 1058 0 8
+_DC24HdwInit: CODE, 1085 0 3
+_isr: CODE, 4 0 69
+_Hdw_AdcStartReadChannel: CODE, 888 0 15
+_IsOk_CallBackWrite: CODE, 1079 0 6
+_BioNetTxInt: CODE, 849 0 21
+_DC22_AnaProcess: CODE, 462 0 61
+_sBioNetConf: STRCODE, 1024 0 13
+___wmul: CODE, 798 0 29
+_BioNetProcess: CODE, 83 0 162
+_Hdw_AdcReadAnaValue: CODE, 767 0 31
+_Hdw_AdcInit: CODE, 1037 0 13
+Total: 968

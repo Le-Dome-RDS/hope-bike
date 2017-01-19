@@ -1,0 +1,400 @@
+[p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 12F1822 ]
+[d frameptr 6 ]
+"116 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
+[e E2376 BioNetStatus `uc
+INIT 0
+RUN 1
+STOP 2
+ERROR 3
+]
+"27 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
+[e E197 BioNetStatus `uc
+INIT 0
+RUN 1
+STOP 2
+ERROR 3
+]
+"23 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
+[e E2205 DC22_AnaStatus `uc
+A_START_I 0
+A_READ_I 1
+A_START_BATT 2
+A_READ_BATT 3
+]
+"62 /Applications/microchip/xc8/v1.38/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 /Applications/microchip/xc8/v1.38/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"15 /Applications/microchip/xc8/v1.38/sources/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"6 /Applications/microchip/xc8/v1.38/sources/pic/eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"51 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
+[v _BioNetInit BioNetInit `(v  1 e 1 0 ]
+"114
+[v _BioNetProcess BioNetProcess `(v  1 e 1 0 ]
+"205
+[v _BioNetRxInt BioNetRxInt `(v  1 e 1 0 ]
+"326
+[v _BioNetTxInt BioNetTxInt `(v  1 e 1 0 ]
+"341
+[v _IsOKVarIsForUs IsOKVarIsForUs `(uc  1 e 1 0 ]
+"365
+[v _CalculChecksumAndSend CalculChecksumAndSend `(v  1 e 1 0 ]
+"395
+[v _IsOKChecksum IsOKChecksum `(uc  1 e 1 0 ]
+"431
+[v _BioNetRazFlag BioNetRazFlag `(v  1 e 1 0 ]
+[v i1_BioNetRazFlag BioNetRazFlag `(v  1 e 1 0 ]
+"43 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.h
+[s S60 VarConfDesc 3 `uc 1 u8VarRef 1 0 `uc 1 u8VarCycle 1 1 `uc 1 u8VarTypeSize 1 2 ]
+"446 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
+[v _pGetVafConf pGetVafConf `(*.25S60  1 e 1 0 ]
+"38 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
+[v _IsOk_CallBackRead IsOk_CallBackRead `(uc  1 e 1 0 ]
+"80
+[v _IsOk_CallBackWrite IsOk_CallBackWrite `(uc  1 e 1 0 ]
+"25 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
+[v _DC22_AnaProcess DC22_AnaProcess `(v  1 e 1 0 ]
+"21 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_HdW.c
+[v _DC24HdwInit DC24HdwInit `(v  1 e 1 0 ]
+"110 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
+[v _main main `(i  1 e 2 0 ]
+"199
+[v _DC24It10ms DC24It10ms `(v  1 e 1 0 ]
+"12 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
+[v _Hdw_AdcInit Hdw_AdcInit `(v  1 e 1 0 ]
+"42
+[v _Hdw_AdcStartReadChannel Hdw_AdcStartReadChannel `(v  1 e 1 0 ]
+"55
+[v _Hdw_AdcIsOkReadAna Hdw_AdcIsOkReadAna `(uc  1 e 1 0 ]
+"73
+[v _Hdw_AdcReadAnaValue Hdw_AdcReadAnaValue `(ui  1 e 2 0 ]
+"15 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Uart.c
+[v _HdwUartInit HdwUartInit `(v  1 e 1 0 ]
+"15 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
+[v _isr isr `II(v  1 e 1 0 ]
+"337 /Applications/microchip/xc8/v1.38/include/pic12f1822.h
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"414
+[v _PORTA PORTA `VEuc  1 e 1 @12 ]
+"1609
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"1747
+[v _ADRESL ADRESL `VEuc  1 e 1 @155 ]
+"1766
+[v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
+"1785
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
+"1873
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
+"2810
+[v _RCREG RCREG `VEuc  1 e 1 @409 ]
+"2829
+[v _TXREG TXREG `VEuc  1 e 1 @410 ]
+"2863
+[v _SPBRGL SPBRGL `VEuc  1 e 1 @411 ]
+"2912
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
+"4978
+[v _ADGO ADGO `VEb  1 e 0 @1257 ]
+"4984
+[v _ADON ADON `VEb  1 e 0 @1256 ]
+"5000
+[v _ANSA0 ANSA0 `VEb  1 e 0 @3168 ]
+"5002
+[v _ANSA1 ANSA1 `VEb  1 e 0 @3169 ]
+"5004
+[v _ANSA2 ANSA2 `VEb  1 e 0 @3170 ]
+"5018
+[v _BRG16 BRG16 `VEb  1 e 0 @3323 ]
+"5020
+[v _BRGH BRGH `VEb  1 e 0 @3314 ]
+"5152
+[v _CREN CREN `VEb  1 e 0 @3308 ]
+"5348
+[v _OERR OERR `VEb  1 e 0 @3305 ]
+"5390
+[v _PS0 PS0 `VEb  1 e 0 @1192 ]
+"5392
+[v _PS1 PS1 `VEb  1 e 0 @1193 ]
+"5394
+[v _PS2 PS2 `VEb  1 e 0 @1194 ]
+"5396
+[v _PSA PSA `VEb  1 e 0 @1195 ]
+"5422
+[v _RCIE RCIE `VEb  1 e 0 @1165 ]
+"5424
+[v _RCIF RCIF `VEb  1 e 0 @141 ]
+"5434
+[v _RXDTSEL RXDTSEL `VEb  1 e 0 @2287 ]
+"5470
+[v _SPEN SPEN `VEb  1 e 0 @3311 ]
+"5546
+[v _SYNC SYNC `VEb  1 e 0 @3316 ]
+"5604
+[v _TMR0CS TMR0CS `VEb  1 e 0 @1197 ]
+"5606
+[v _TMR0IE TMR0IE `VEb  1 e 0 @93 ]
+"5608
+[v _TMR0IF TMR0IF `VEb  1 e 0 @90 ]
+"5634
+[v _TRISA0 TRISA0 `VEb  1 e 0 @1120 ]
+"5638
+[v _TRISA2 TRISA2 `VEb  1 e 0 @1122 ]
+"5668
+[v _TXCKSEL TXCKSEL `VEb  1 e 0 @2282 ]
+"5670
+[v _TXEN TXEN `VEb  1 e 0 @3317 ]
+"5672
+[v _TXIE TXIE `VEb  1 e 0 @1164 ]
+"5674
+[v _TXIF TXIF `VEb  1 e 0 @140 ]
+"25 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
+[v _tu8BioNetBuff tu8BioNetBuff `[4]uc  1 e 4 0 ]
+"26
+[v _u8IndexRx u8IndexRx `uc  1 e 1 0 ]
+"27
+[v _u8IndexTx u8IndexTx `uc  1 e 1 0 ]
+"28
+[v _u8TxFrameSize u8TxFrameSize `uc  1 e 1 0 ]
+"30
+[v _u8RxNoDelay u8RxNoDelay `uc  1 e 1 0 ]
+"31
+[v _bRazFlagAllowed bRazFlagAllowed `uc  1 e 1 0 ]
+"33
+[v _u8Prescaler10ms u8Prescaler10ms `uc  1 e 1 0 ]
+[s S60 VarConfDesc 3 `uc 1 u8VarRef 1 0 `uc 1 u8VarCycle 1 1 `uc 1 u8VarTypeSize 1 2 ]
+"35
+[v _pVarConfDes pVarConfDes `*.25S60  1 e 2 0 ]
+"37
+[v _bNetworkCommand bNetworkCommand `uc  1 e 1 0 ]
+"38
+[v _bNetworkCommandOK bNetworkCommandOK `uc  1 e 1 0 ]
+"39
+[v _bIsWriteFrame bIsWriteFrame `uc  1 e 1 0 ]
+"40
+[v _bNetworkReadOK bNetworkReadOK `uc  1 e 1 0 ]
+"41
+[v _bNetworkWriteOK bNetworkWriteOK `uc  1 e 1 0 ]
+"20 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
+[s S114 BioNetConf 13 `[4]S60 1 sVarConfDesc 12 0 `uc 1 u8VarNumber 1 12 ]
+[v _sBioNetConf sBioNetConf `DCCS114  1 e 13 0 ]
+"27
+[v _eBioNetStatus eBioNetStatus `E2376  1 e 1 0 ]
+"23 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
+[v _eDC22_AnaState eDC22_AnaState `E2205  1 e 1 0 ]
+"12 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_GlobalVar.c
+[v _Tempo500ms Tempo500ms `uc  1 e 1 0 ]
+"14
+[v _u8Pedalage u8Pedalage `uc  1 e 1 0 ]
+"15
+[v _u8PedalageCpt u8PedalageCpt `uc  1 e 1 0 ]
+"16
+[v _bPedalageLevelPrev bPedalageLevelPrev `uc  1 e 1 0 ]
+"18
+[v _u8RPM u8RPM `uc  1 e 1 0 ]
+"19
+[v _u8RPMCpt u8RPMCpt `uc  1 e 1 0 ]
+"20
+[v _bRPMLevelPrev bRPMLevelPrev `uc  1 e 1 0 ]
+"22
+[v _u16TensionBatterie u16TensionBatterie `ui  1 e 2 0 ]
+"23
+[v _u16CourantBatt u16CourantBatt `ui  1 e 2 0 ]
+"110 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
+[v _main main `(i  1 e 2 0 ]
+{
+"127
+[v main@u16CompteurDiv1000 u16CompteurDiv1000 `ui  1 a 2 26 ]
+"126
+[v main@u16Compteur u16Compteur `ui  1 a 2 24 ]
+"124
+[v main@u16TimerHaut u16TimerHaut `ui  1 a 2 22 ]
+"123
+[v main@u16TimerBas u16TimerBas `ui  1 a 2 20 ]
+"112
+[v main@ValPort ValPort `uc  1 a 1 28 ]
+"194
+} 0
+"12 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
+[v _Hdw_AdcInit Hdw_AdcInit `(v  1 e 1 0 ]
+{
+"37
+} 0
+"15 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Uart.c
+[v _HdwUartInit HdwUartInit `(v  1 e 1 0 ]
+{
+"98
+} 0
+"21 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_HdW.c
+[v _DC24HdwInit DC24HdwInit `(v  1 e 1 0 ]
+{
+"37
+} 0
+"25 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
+[v _DC22_AnaProcess DC22_AnaProcess `(v  1 e 1 0 ]
+{
+"69
+} 0
+"42 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
+[v _Hdw_AdcStartReadChannel Hdw_AdcStartReadChannel `(v  1 e 1 0 ]
+{
+[v Hdw_AdcStartReadChannel@Channel Channel `uc  1 a 1 wreg ]
+[v Hdw_AdcStartReadChannel@Channel Channel `uc  1 a 1 wreg ]
+"45
+[v Hdw_AdcStartReadChannel@Channel Channel `uc  1 a 1 8 ]
+"49
+} 0
+"73
+[v _Hdw_AdcReadAnaValue Hdw_AdcReadAnaValue `(ui  1 e 2 0 ]
+{
+"75
+[v Hdw_AdcReadAnaValue@temp temp `ui  1 a 2 11 ]
+"81
+} 0
+"55
+[v _Hdw_AdcIsOkReadAna Hdw_AdcIsOkReadAna `(uc  1 e 1 0 ]
+{
+"67
+} 0
+"114 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
+[v _BioNetProcess BioNetProcess `(v  1 e 1 0 ]
+{
+"116
+[v BioNetProcess@eBioNetStatusRx eBioNetStatusRx `E2376  1 a 1 14 ]
+"201
+} 0
+"80 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
+[v _IsOk_CallBackWrite IsOk_CallBackWrite `(uc  1 e 1 0 ]
+{
+"82
+[v IsOk_CallBackWrite@Result Result `uc  1 a 1 8 ]
+"80
+[v IsOk_CallBackWrite@pu8Buffer pu8Buffer `*.4uc  1 p 1 7 ]
+"88
+} 0
+"38
+[v _IsOk_CallBackRead IsOk_CallBackRead `(uc  1 e 1 0 ]
+{
+[v IsOk_CallBackRead@u8VarRef u8VarRef `uc  1 a 1 wreg ]
+"40
+[v IsOk_CallBackRead@Result Result `uc  1 a 1 9 ]
+"38
+[v IsOk_CallBackRead@u8VarRef u8VarRef `uc  1 a 1 wreg ]
+[v IsOk_CallBackRead@pu8Buffer pu8Buffer `*.4uc  1 p 1 7 ]
+"40
+[v IsOk_CallBackRead@u8VarRef u8VarRef `uc  1 a 1 10 ]
+"70
+} 0
+"365 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
+[v _CalculChecksumAndSend CalculChecksumAndSend `(v  1 e 1 0 ]
+{
+[v CalculChecksumAndSend@u8SizeFrame u8SizeFrame `uc  1 a 1 wreg ]
+"368
+[v CalculChecksumAndSend@index index `uc  1 a 1 10 ]
+"367
+[v CalculChecksumAndSend@u8Check u8Check `uc  1 a 1 8 ]
+"365
+[v CalculChecksumAndSend@u8SizeFrame u8SizeFrame `uc  1 a 1 wreg ]
+"367
+[v CalculChecksumAndSend@u8SizeFrame u8SizeFrame `uc  1 a 1 9 ]
+"392
+} 0
+"431
+[v _BioNetRazFlag BioNetRazFlag `(v  1 e 1 0 ]
+{
+"441
+} 0
+"51
+[v _BioNetInit BioNetInit `(v  1 e 1 0 ]
+{
+"110
+} 0
+"15 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"76
+} 0
+"199 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
+[v _DC24It10ms DC24It10ms `(v  1 e 1 0 ]
+{
+"223
+} 0
+"326 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
+[v _BioNetTxInt BioNetTxInt `(v  1 e 1 0 ]
+{
+"337
+} 0
+"205
+[v _BioNetRxInt BioNetRxInt `(v  1 e 1 0 ]
+{
+"207
+[v BioNetRxInt@u8CharBuf u8CharBuf `uc  1 a 1 4 ]
+[v BioNetRxInt@u8TxFrameSize u8TxFrameSize `uc  1 a 1 3 ]
+"322
+} 0
+"431
+[v i1_BioNetRazFlag BioNetRazFlag `(v  1 e 1 0 ]
+{
+"441
+} 0
+"43 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.h
+[s S60 VarConfDesc 3 `uc 1 u8VarRef 1 0 `uc 1 u8VarCycle 1 1 `uc 1 u8VarTypeSize 1 2 ]
+"446 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
+[v _pGetVafConf pGetVafConf `(*.25S60  1 e 1 0 ]
+{
+[v pGetVafConf@VarRef VarRef `uc  1 a 1 wreg ]
+"448
+[v pGetVafConf@idx idx `uc  1 a 1 13 ]
+"446
+[v pGetVafConf@VarRef VarRef `uc  1 a 1 wreg ]
+"448
+[v pGetVafConf@VarRef VarRef `uc  1 a 1 12 ]
+"461
+} 0
+"341
+[v _IsOKVarIsForUs IsOKVarIsForUs `(uc  1 e 1 0 ]
+{
+[v IsOKVarIsForUs@VarRef VarRef `uc  1 a 1 wreg ]
+"343
+[v IsOKVarIsForUs@VarIdx VarIdx `uc  1 a 1 10 ]
+"344
+[v IsOKVarIsForUs@IsManagedByOurself IsManagedByOurself `uc  1 a 1 9 ]
+"341
+[v IsOKVarIsForUs@VarRef VarRef `uc  1 a 1 wreg ]
+"343
+[v IsOKVarIsForUs@VarRef VarRef `uc  1 a 1 8 ]
+"360
+} 0
+"15 /Applications/microchip/xc8/v1.38/sources/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"395 /Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
+[v _IsOKChecksum IsOKChecksum `(uc  1 e 1 0 ]
+{
+[v IsOKChecksum@u8SizeFrame u8SizeFrame `uc  1 a 1 wreg ]
+"399
+[v IsOKChecksum@index index `uc  1 a 1 4 ]
+"397
+[v IsOKChecksum@u8Check u8Check `uc  1 a 1 2 ]
+"398
+[v IsOKChecksum@u8CheckCpl u8CheckCpl `uc  1 a 1 1 ]
+"395
+[v IsOKChecksum@u8SizeFrame u8SizeFrame `uc  1 a 1 wreg ]
+"397
+[v IsOKChecksum@u8SizeFrame u8SizeFrame `uc  1 a 1 3 ]
+"426
+} 0
