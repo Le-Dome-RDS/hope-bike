@@ -2,5 +2,5 @@
 
 This folder contains the source code for the command card and the power management card. 
 
-Details for dwownloading softwarz are given in each cases.
+Details for dwownloading software are given in each cases.
 
