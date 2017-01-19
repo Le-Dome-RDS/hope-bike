@@ -2,5 +2,5 @@
 
 This folder contains the source code for the command card and the power management card. 
 
-The command card is based on an arduino car and requires the arduino IDE environment
+Details for dwownloading softwarz are given in each cases.
 
