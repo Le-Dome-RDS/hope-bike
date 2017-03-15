@@ -5,11 +5,35 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="38.76mm"
    height="45.76mm"
    viewBox="0 0 38.76 45.76"
    version="1.1"
-   id="svg2">
+   id="svg2"
+   sodipodi:docname="EPDM_Boitier_bouton_Joints_M3.svg"
+   inkscape:version="0.92.0 r15299">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1005"
+     id="namedview47"
+     showgrid="false"
+     inkscape:zoom="0.68227348"
+     inkscape:cx="159.3164"
+     inkscape:cy="28.335466"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
   <metadata
      id="metadata20">
     <rdf:RDF>
@@ -18,7 +42,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -38,58 +62,11 @@
        id="flowPara4198"
        style="font-size:15px">JOINTS x2</flowPara><flowPara
        style="font-size:15px"
-       id="flowPara5335" /></flowRoot>  <flowRoot
-     xml:space="preserve"
-     id="flowRoot5312"
-     style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     transform="scale(0.28222222,0.28222222)"><flowRegion
-       id="flowRegion5314"><rect
-         id="rect5316"
-         width="515.45636"
-         height="64.299194"
-         x="15.941949"
-         y="264.7016" /></flowRegion><flowPara
-       id="flowPara5318"
-       style="font-size:15px">Chambre à air</flowPara></flowRoot>  <g
-     transform="translate(1.0462458,-1.4455289)"
-     id="g4413-9">
-    <path
-       id="Sketch001_w0000"
-       d="m 0.05011333,41.72655 0,-36.9867594 A 4.0001109,4.0001109 0 0 1 4.0799053,0.70999859 l 29.9804707,0 a 4.0000132,4.0000132 0 0 1 3.989737,3.98973701 l 0,37.1224824 a 4.0015738,4.0015738 0 0 1 -3.887781,3.887781 l -30.1287697,0 A 4.0000342,4.0000342 0 0 1 0.05011333,41.72655"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none" />
-    <ellipse
-       ry="1.4285715"
-       rx="1.4285713"
-       transform="scale(1,-1)"
-       cx="34.599998"
-       cy="-42.259998"
-       style="fill:none;stroke:#000000;stroke-width:0.14285713;stroke-miterlimit:4;stroke-dasharray:none"
-       id="circle6-4-4-2" />
-    <ellipse
-       ry="1.4434643"
-       rx="1.4434644"
-       transform="scale(1,-1)"
-       cx="3.5"
-       cy="-42.259998"
-       style="fill:none;stroke:#000000;stroke-width:0.11307137;stroke-miterlimit:4;stroke-dasharray:none"
-       id="circle10-5-9-3" />
-    <ellipse
-       ry="1.4285715"
-       rx="1.4285713"
-       transform="scale(1,-1)"
-       cx="34.599998"
-       cy="-4.1599984"
-       style="fill:none;stroke:#000000;stroke-width:0.14285713;stroke-miterlimit:4;stroke-dasharray:none"
-       id="circle6-4-9-3-6" />
-    <ellipse
-       ry="1.4434643"
-       rx="1.4434644"
-       transform="scale(1,-1)"
-       cx="3.5"
-       cy="-4.1599984"
-       style="fill:none;stroke:#000000;stroke-width:0.11307137;stroke-miterlimit:4;stroke-dasharray:none"
-       id="circle10-5-1-8-7" />
-  </g>
+       id="flowPara5335" /></flowRoot>  <path
+     inkscape:connector-curvature="0"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none"
+     d="M 1.0963591,40.281021 V 3.2942617 a 4.0001109,4.0001109 0 0 1 4.029792,-4.02979201 H 35.106622 A 4.0000132,4.0000132 0 0 1 39.096359,3.2542067 V 40.376689 A 4.0015738,4.0015738 0 0 1 35.208578,44.26447 H 5.0798081 a 4.0000342,4.0000342 0 0 1 -3.983449,-3.983449"
+     id="Sketch001_w0000" />
   <flowRoot
      xml:space="preserve"
      id="flowRoot4179"
@@ -100,54 +77,10 @@
          height="97.245888"
          x="453.01706"
          y="46.0312" /></flowRegion><flowPara
-       id="flowPara4185" /></flowRoot>  <flowRoot
-     xml:space="preserve"
-     id="flowRoot4195"
-     style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     transform="scale(0.28222222,0.28222222)"><flowRegion
-       id="flowRegion4197"><rect
-         id="rect4199"
-         width="17.801844"
-         height="17.801844"
-         x="451.42285"
-         y="96.779739" /></flowRegion><flowPara
-       id="flowPara4201"
-       style="font-size:20.00000027px">O</flowPara></flowRoot>  <path
+       id="flowPara4185" /></flowRoot>  <path
      style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none"
      d="M 40.921834,40.833983 V 3.8768599 a 4.0000169,4.0000169 0 0 1 4.01163,-4.011629 h 30.0104 a 4.0000606,4.0000606 0 0 1 3.97797,4.022027 V 40.941982 a 4.0007363,4.0007363 0 0 1 -4.07675,3.923249 h -29.892 a 4.0001221,4.0001221 0 0 1 -4.03125,-4.031248"
      id="Sketch002_w0000" />
-  <ellipse
-     id="circle6-4-4-7"
-     style="fill:none;stroke:#000000;stroke-width:0.14285715;stroke-miterlimit:4;stroke-dasharray:none"
-     cy="-41.415981"
-     cx="75.47171"
-     transform="scale(1,-1)"
-     rx="1.4285713"
-     ry="1.4285715" />
-  <ellipse
-     id="circle10-5-9-1"
-     style="fill:none;stroke:#000000;stroke-width:0.11307137;stroke-miterlimit:4;stroke-dasharray:none"
-     cy="-41.415981"
-     cx="44.371704"
-     transform="scale(1,-1)"
-     rx="1.4434645"
-     ry="1.4434643" />
-  <ellipse
-     id="circle6-4-9-3-2"
-     style="fill:none;stroke:#000000;stroke-width:0.14285715;stroke-miterlimit:4;stroke-dasharray:none"
-     cy="-3.3159835"
-     cx="75.47171"
-     transform="scale(1,-1)"
-     rx="1.4285713"
-     ry="1.4285715" />
-  <ellipse
-     id="circle10-5-1-8-7-3"
-     style="fill:none;stroke:#000000;stroke-width:0.11307137;stroke-miterlimit:4;stroke-dasharray:none"
-     cy="-3.3159835"
-     cx="44.371704"
-     transform="scale(1,-1)"
-     rx="1.4434645"
-     ry="1.4434643" />
   <flowRoot
      xml:space="preserve"
      id="flowRoot4187"
@@ -189,4 +122,74 @@
        id="flowPara4217"
        style="font-size:5.64444447px">|<flowSpan
    style="font-size:4.93888903px"
-   id="flowSpan4221">&gt;&gt;</flowSpan></flowPara></flowRoot></svg>
+   id="flowSpan4221">&gt;&gt;</flowSpan></flowPara></flowRoot>  <g
+     transform="translate(-4.1449047,-250.85512)"
+     id="g4564-7-2">
+    <ellipse
+       id="circle6-4-4-3-1"
+       style="fill:none;stroke:#000000;stroke-width:0.0952381;stroke-miterlimit:4;stroke-dasharray:none"
+       cy="-291.66953"
+       cx="39.791206"
+       transform="scale(1,-1)"
+       rx="0.95238101"
+       ry="0.95238107" />
+    <ellipse
+       id="circle10-5-9-4-3"
+       style="fill:none;stroke:#000000;stroke-width:0.07538091;stroke-miterlimit:4;stroke-dasharray:none"
+       cy="-291.66953"
+       cx="8.6912079"
+       transform="scale(1,-1)"
+       rx="0.9623096"
+       ry="0.96230948" />
+    <ellipse
+       id="circle6-4-9-3-9-8"
+       style="fill:none;stroke:#000000;stroke-width:0.0952381;stroke-miterlimit:4;stroke-dasharray:none"
+       cy="-253.56953"
+       cx="39.791206"
+       transform="scale(1,-1)"
+       rx="0.95238101"
+       ry="0.95238107" />
+    <circle
+       r="0.9623096"
+       id="circle10-5-1-8-1-3"
+       style="fill:none;stroke:#000000;stroke-width:0.07538091;stroke-miterlimit:4;stroke-dasharray:none"
+       cy="-253.56953"
+       cx="8.6912079"
+       transform="scale(1,-1)" />
+  </g>
+  <g
+     transform="translate(35.680595,-250.25393)"
+     id="g4564-7-1">
+    <ellipse
+       id="circle6-4-4-3-9"
+       style="fill:none;stroke:#000000;stroke-width:0.0952381;stroke-miterlimit:4;stroke-dasharray:none"
+       cy="-291.66953"
+       cx="39.791206"
+       transform="scale(1,-1)"
+       rx="0.95238101"
+       ry="0.95238107" />
+    <ellipse
+       id="circle10-5-9-4-7"
+       style="fill:none;stroke:#000000;stroke-width:0.07538091;stroke-miterlimit:4;stroke-dasharray:none"
+       cy="-291.66953"
+       cx="8.6912079"
+       transform="scale(1,-1)"
+       rx="0.9623096"
+       ry="0.96230948" />
+    <ellipse
+       id="circle6-4-9-3-9-5"
+       style="fill:none;stroke:#000000;stroke-width:0.0952381;stroke-miterlimit:4;stroke-dasharray:none"
+       cy="-253.56953"
+       cx="39.791206"
+       transform="scale(1,-1)"
+       rx="0.95238101"
+       ry="0.95238107" />
+    <circle
+       r="0.9623096"
+       id="circle10-5-1-8-1-0"
+       style="fill:none;stroke:#000000;stroke-width:0.07538091;stroke-miterlimit:4;stroke-dasharray:none"
+       cy="-253.56953"
+       cx="8.6912079"
+       transform="scale(1,-1)" />
+  </g>
+</svg>
