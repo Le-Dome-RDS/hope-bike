@@ -17,8 +17,9 @@
 #define ETAT_AUGMENTE_PWM         2
 #define ETAT_DIMINUE_PWM          3
 #define ETAT_REGULATION           4
+#define ETAT_SUR_INTENSITE        5
 
-#define ETAT_BUG                  5
+#define ETAT_BUG                  6
 
 
 /* Les valeurs limites qui gère la machine d'etat */
@@ -174,8 +175,8 @@ switch(u8Etat){
    }
    else if ((u8VitessePedale>=PEDALE_LIMITE) && (s16CourantMotUnitAmp>=s16courantLimit)  )
       u8Etat=ETAT_DIMINUE_PWM ;    
-   
-   if (s16CourantMotUnitAmp>COURANT_MOTEUR_MAX) u8Etat=ETAT_BUG;
+  
+   if (s16CourantMotUnitAmp>COURANT_MOTEUR_MAX) u8Etat=ETAT_SUR_INTENSITE;
  
   break;
 
@@ -193,7 +194,7 @@ case ETAT_DIMINUE_PWM:
    }
    else if ((u8VitessePedale>=PEDALE_LIMITE) && (s16CourantMotUnitAmp>=s16courantLimit)  )
       u8Etat=ETAT_DIMINUE_PWM ;       
-   if (s16CourantMotUnitAmp>COURANT_MOTEUR_MAX) u8Etat=ETAT_BUG;
+   if (s16CourantMotUnitAmp>COURANT_MOTEUR_MAX) u8Etat=ETAT_SUR_INTENSITE;
  
   break;
 
@@ -215,9 +216,30 @@ case ETAT_DIMINUE_PWM:
      
       u8Etat=ETAT_DIMINUE_PWM ;       
    }
-   if (s16CourantMotUnitAmp>COURANT_MOTEUR_MAX) u8Etat=ETAT_BUG;
+   if (s16CourantMotUnitAmp>COURANT_MOTEUR_MAX) u8Etat=ETAT_SUR_INTENSITE;
   break;
+  
+  case ETAT_SUR_INTENSITE:
+   if (u8VitessePedale<PEDALE_LIMITE) {
+       u8Etat=ETAT_ARRET;
+       bChronoArretPedalage         =  true;
+       u32ChronoArrretDebut   =  millis(); 
+   }
+   else if ((u8VitessePedale>=PEDALE_LIMITE) && (s16CourantMotUnitAmp<s16courantLimit) && (u8RotationRoue<ConsigneDesiree-VITESSE_REGULATION_SEUIL))
+      u8Etat=ETAT_AUGMENTE_PWM;
+   else if ((u8VitessePedale>=PEDALE_LIMITE) && (s16CourantMotUnitAmp<s16courantLimit) && (u8RotationRoue>=ConsigneDesiree-VITESSE_REGULATION_SEUIL)){
+      u8Etat=ETAT_REGULATION ;
+      i8PWMTemp=i8PWM;
+   }
+   else if ((u8VitessePedale>=PEDALE_LIMITE) && (s16CourantMotUnitAmp>=s16courantLimit)  )
+      u8Etat=ETAT_DIMINUE_PWM ;       
+   if (s16CourantMotUnitAmp>COURANT_MOTEUR_MAX) u8Etat=ETAT_SUR_INTENSITE;
+ 
+  break;
+
   }
+
+  
 }
 
 
@@ -262,6 +284,14 @@ switch(u8Etat){
     i8PWM=i8PWM-1;
     if (i8PWM<0) i8PWM=0;
   break;
+
+  // Diminution franche de la commande quand une surintensité moteur est détectée
+  
+   case ETAT_SUR_INTENSITE:
+    i8PWM=i8PWM-5;
+    if (i8PWM<0) i8PWM=0;
+  break;
+  
   //-----------------------------------------------------------------------------
   // REGULATION en VITESSE, on realise un correcteur proportionnel 
   // PWM=K(Consigne-vitesse rotation roue)

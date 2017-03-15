@@ -35,6 +35,9 @@
 // correction d'un bug sur la commande proportionnelle !
 // NB : 
 
+// 15/03/2017 : gestion des sur-intensite par création d'un nouvel état avec diminution rapide du PWM
+
+
 
 //****************************************************************************
 // DEFINITION DES VALEURS UTILISATEURS
