@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/xcGbz1rTc.obj
+$/tmp/xc8UVr7nN.obj
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 49 49 1 2
 config CONFIG 0 8007 8007 2 2
@@ -115,56 +115,56 @@ STRING 3F5-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/Pic12F.production.obj
-4A cinit CODE >1863:/tmp/xc79LV0Gq
-4A cinit CODE >1866:/tmp/xc79LV0Gq
-4A cinit CODE >1959:/tmp/xc79LV0Gq
-4B cinit CODE >1960:/tmp/xc79LV0Gq
-4C cinit CODE >1961:/tmp/xc79LV0Gq
-4D cinit CODE >1962:/tmp/xc79LV0Gq
-4E cinit CODE >1963:/tmp/xc79LV0Gq
-4F cinit CODE >1964:/tmp/xc79LV0Gq
-50 cinit CODE >1970:/tmp/xc79LV0Gq
-50 cinit CODE >1972:/tmp/xc79LV0Gq
-51 cinit CODE >1973:/tmp/xc79LV0Gq
-52 cinit CODE >1974:/tmp/xc79LV0Gq
-4 intentry CODE >15:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-9 intentry CODE >18:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-10 intentry CODE >21:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-11 intentry CODE >24:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-14 intentry CODE >27:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-16 intentry CODE >28:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-17 intentry CODE >33:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-1A intentry CODE >35:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-1B intentry CODE >36:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-1D intentry CODE >42:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-21 intentry CODE >44:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-25 intentry CODE >46:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-26 intentry CODE >48:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-27 intentry CODE >50:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-2A intentry CODE >53:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-2B intentry CODE >54:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-2C intentry CODE >58:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-2D intentry CODE >60:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-36 intentry CODE >62:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-38 intentry CODE >63:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-39 intentry CODE >64:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-3A intentry CODE >66:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-43 intentry CODE >73:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-44 intentry CODE >76:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Interrupt.c
-2C2 text22 CODE >395:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2C3 text22 CODE >397:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2C4 text22 CODE >399:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2C5 text22 CODE >402:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2CA text22 CODE >403:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2D0 text22 CODE >406:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2D2 text22 CODE >408:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2D6 text22 CODE >410:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2DE text22 CODE >408:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2E3 text22 CODE >413:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2EB text22 CODE >415:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2EF text22 CODE >418:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2F0 text22 CODE >419:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2F1 text22 CODE >423:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
+4A cinit CODE >1863:/tmp/xcHx6G5tz
+4A cinit CODE >1866:/tmp/xcHx6G5tz
+4A cinit CODE >1959:/tmp/xcHx6G5tz
+4B cinit CODE >1960:/tmp/xcHx6G5tz
+4C cinit CODE >1961:/tmp/xcHx6G5tz
+4D cinit CODE >1962:/tmp/xcHx6G5tz
+4E cinit CODE >1963:/tmp/xcHx6G5tz
+4F cinit CODE >1964:/tmp/xcHx6G5tz
+50 cinit CODE >1970:/tmp/xcHx6G5tz
+50 cinit CODE >1972:/tmp/xcHx6G5tz
+51 cinit CODE >1973:/tmp/xcHx6G5tz
+52 cinit CODE >1974:/tmp/xcHx6G5tz
+4 intentry CODE >15:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+9 intentry CODE >18:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+10 intentry CODE >21:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+11 intentry CODE >24:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+14 intentry CODE >27:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+16 intentry CODE >28:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+17 intentry CODE >33:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+1A intentry CODE >35:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+1B intentry CODE >36:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+1D intentry CODE >42:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+21 intentry CODE >44:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+25 intentry CODE >46:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+26 intentry CODE >48:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+27 intentry CODE >50:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+2A intentry CODE >53:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+2B intentry CODE >54:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+2C intentry CODE >58:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+2D intentry CODE >60:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+36 intentry CODE >62:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+38 intentry CODE >63:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+39 intentry CODE >64:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+3A intentry CODE >66:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+43 intentry CODE >73:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+44 intentry CODE >76:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Interrupt.c
+2C2 text22 CODE >395:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2C3 text22 CODE >397:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2C4 text22 CODE >399:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2C5 text22 CODE >402:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2CA text22 CODE >403:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2D0 text22 CODE >406:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2D2 text22 CODE >408:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2D6 text22 CODE >410:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2DE text22 CODE >408:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2E3 text22 CODE >413:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2EB text22 CODE >415:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2EF text22 CODE >418:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2F0 text22 CODE >419:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2F1 text22 CODE >423:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
 33F text21 CODE >15:/Applications/microchip/xc8/v1.38/sources/common/Umul16.c
 33F text21 CODE >43:/Applications/microchip/xc8/v1.38/sources/common/Umul16.c
 341 text21 CODE >45:/Applications/microchip/xc8/v1.38/sources/common/Umul16.c
@@ -173,268 +173,268 @@ $dist/default/production/Pic12F.production.obj
 34C text21 CODE >48:/Applications/microchip/xc8/v1.38/sources/common/Umul16.c
 351 text21 CODE >49:/Applications/microchip/xc8/v1.38/sources/common/Umul16.c
 355 text21 CODE >52:/Applications/microchip/xc8/v1.38/sources/common/Umul16.c
-2F3 text20 CODE >341:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2F4 text20 CODE >343:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2F5 text20 CODE >344:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2F6 text20 CODE >346:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2FA text20 CODE >348:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-2FE text20 CODE >351:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-316 text20 CODE >354:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-318 text20 CODE >348:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-320 text20 CODE >359:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-1E3 text19 CODE >446:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-1E4 text19 CODE >448:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-1E5 text19 CODE >451:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-1E9 text19 CODE >453:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-201 text19 CODE >456:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-21C text19 CODE >451:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-224 text19 CODE >460:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3D7 text18 CODE >431:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3D7 text18 CODE >433:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3D9 text18 CODE >435:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3DA text18 CODE >436:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3DB text18 CODE >437:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3DC text18 CODE >438:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3DD text18 CODE >439:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3DE text18 CODE >441:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-EF text17 CODE >205:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-EF text17 CODE >210:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-F4 text17 CODE >211:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-F6 text17 CODE >214:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-FC text17 CODE >216:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-FF text17 CODE >222:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-107 text17 CODE >225:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-10A text17 CODE >229:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-10E text17 CODE >232:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-110 text17 CODE >235:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-111 text17 CODE >236:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-116 text17 CODE >240:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-11F text17 CODE >243:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-121 text17 CODE >247:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-122 text17 CODE >248:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-125 text17 CODE >251:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-125 text17 CODE >254:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-127 text17 CODE >256:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-12B text17 CODE >260:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-12C text17 CODE >261:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-12E text17 CODE >270:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-133 text17 CODE >273:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-134 text17 CODE >276:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-137 text17 CODE >280:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-13B text17 CODE >283:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-13F text17 CODE >285:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-144 text17 CODE >288:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-147 text17 CODE >293:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-148 text17 CODE >294:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-14B text17 CODE >297:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-15C text17 CODE >299:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-168 text17 CODE >302:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-16C text17 CODE >304:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-171 text17 CODE >307:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-174 text17 CODE >312:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-175 text17 CODE >316:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-176 text17 CODE >321:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-370 text16 CODE >326:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-370 text16 CODE >328:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-375 text16 CODE >331:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-381 text16 CODE >332:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-382 text16 CODE >333:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-382 text16 CODE >335:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-35A text15 CODE >199:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-35A text15 CODE >203:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-35C text15 CODE >206:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-360 text15 CODE >207:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-364 text15 CODE >211:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-368 text15 CODE >213:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-36C text15 CODE >216:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-36D text15 CODE >219:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-36E text15 CODE >220:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-3A6 text13 CODE >51:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3A6 text13 CODE >55:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3A9 text13 CODE >59:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3AA text13 CODE >60:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3AB text13 CODE >61:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3AC text13 CODE >62:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3AD text13 CODE >63:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3AE text13 CODE >64:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3AF text13 CODE >68:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3B4 text13 CODE >110:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3CF text12 CODE >431:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3CF text12 CODE >433:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3D1 text12 CODE >435:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3D2 text12 CODE >436:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3D3 text12 CODE >437:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3D4 text12 CODE >438:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3D5 text12 CODE >439:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3D6 text12 CODE >441:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-25F text11 CODE >365:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-261 text11 CODE >367:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-262 text11 CODE >368:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-263 text11 CODE >371:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-266 text11 CODE >374:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-268 text11 CODE >377:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-26C text11 CODE >379:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-274 text11 CODE >377:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-279 text11 CODE >382:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-281 text11 CODE >384:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-285 text11 CODE >388:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-289 text11 CODE >389:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-28B text11 CODE >390:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-28E text11 CODE >391:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-290 text11 CODE >392:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-291 text10 CODE >38:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-293 text10 CODE >40:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-295 text10 CODE >42:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-299 text10 CODE >45:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-2A0 text10 CODE >46:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-2A1 text10 CODE >47:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-2A5 text10 CODE >50:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-2A7 text10 CODE >52:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-2AB text10 CODE >55:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-2B2 text10 CODE >56:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-2B3 text10 CODE >57:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-2B7 text10 CODE >60:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-2BE text10 CODE >61:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-2BF text10 CODE >65:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-2C0 text10 CODE >69:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-3EC text9 CODE >80:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-3EC text9 CODE >82:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-3EF text9 CODE >85:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-3F0 text9 CODE >87:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-NetApp.c
-53 text8 CODE >114:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-53 text8 CODE >118:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-57 text8 CODE >123:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-5B text8 CODE >124:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-5D text8 CODE >127:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-5E text8 CODE >129:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-63 text8 CODE >132:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-64 text8 CODE >134:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-68 text8 CODE >137:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-6C text8 CODE >138:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-6D text8 CODE >139:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-74 text8 CODE >142:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-75 text8 CODE >144:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-76 text8 CODE >147:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-7D text8 CODE >151:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-8C text8 CODE >152:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-9B text8 CODE >154:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-9D text8 CODE >155:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-9F text8 CODE >158:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-A6 text8 CODE >161:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-A9 text8 CODE >164:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-B6 text8 CODE >168:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-C6 text8 CODE >169:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-C8 text8 CODE >172:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-CC text8 CODE >175:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-D9 text8 CODE >178:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-DB text8 CODE >183:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-E0 text8 CODE >185:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-E2 text8 CODE >186:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-E4 text8 CODE >191:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-E8 text8 CODE >195:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-ED text8 CODE >197:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-EE text8 CODE >198:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Bio-Net.c
-3DF text7 CODE >55:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-3DF text7 CODE >58:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-3E2 text7 CODE >60:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-3E3 text7 CODE >61:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-3E4 text7 CODE >64:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-322 text6 CODE >73:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-322 text6 CODE >76:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-32C text6 CODE >77:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-331 text6 CODE >78:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-33A text6 CODE >80:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-397 text5 CODE >42:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-399 text5 CODE >45:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-3A4 text5 CODE >48:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-3A5 text5 CODE >49:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-227 text4 CODE >25:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-227 text4 CODE >29:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-22B text4 CODE >31:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-22D text4 CODE >32:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-230 text4 CODE >33:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-231 text4 CODE >36:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-234 text4 CODE >39:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-238 text4 CODE >43:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-23E text4 CODE >45:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-242 text4 CODE >47:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-243 text4 CODE >50:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-247 text4 CODE >52:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-249 text4 CODE >54:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-24E text4 CODE >55:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-24F text4 CODE >57:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-253 text4 CODE >61:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-257 text4 CODE >63:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-25D text4 CODE >65:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-25E text4 CODE >69:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_Ana.c
-3F2 text3 CODE >21:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_HdW.c
-3F2 text3 CODE >24:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_HdW.c
-3F4 text3 CODE >37:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_HdW.c
-385 text2 CODE >15:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Uart.c
-385 text2 CODE >20:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Uart.c
-387 text2 CODE >21:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Uart.c
-388 text2 CODE >25:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Uart.c
-38A text2 CODE >26:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Uart.c
-38B text2 CODE >27:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Uart.c
-38C text2 CODE >30:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Uart.c
-38E text2 CODE >31:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Uart.c
-390 text2 CODE >38:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Uart.c
-392 text2 CODE >41:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Uart.c
-394 text2 CODE >42:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Uart.c
-395 text2 CODE >43:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Uart.c
-396 text2 CODE >98:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Uart.c
-3C2 text1 CODE >12:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-3C2 text1 CODE >17:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-3C4 text1 CODE >18:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-3C6 text1 CODE >21:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-3C8 text1 CODE >22:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-3CA text1 CODE >24:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-3CD text1 CODE >33:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-3CE text1 CODE >37:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/Hdw_Adc.c
-17F maintext CODE >110:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-17F maintext CODE >114:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-180 maintext CODE >115:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-181 maintext CODE >116:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-182 maintext CODE >117:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-183 maintext CODE >123:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-186 maintext CODE >124:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-188 maintext CODE >126:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-18A maintext CODE >127:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-18C maintext CODE >131:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-18D maintext CODE >141:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-18E maintext CODE >142:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-193 maintext CODE >143:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1A0 maintext CODE >146:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1A2 maintext CODE >148:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1A4 maintext CODE >149:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1A5 maintext CODE >152:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1A6 maintext CODE >156:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1AA maintext CODE >158:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1AD maintext CODE >159:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1B1 maintext CODE >161:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1B4 maintext CODE >162:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1B8 maintext CODE >165:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1BA maintext CODE >166:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1BC maintext CODE >167:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1C4 maintext CODE >168:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1C9 maintext CODE >169:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1CA maintext CODE >171:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1CE maintext CODE >174:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1D0 maintext CODE >176:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1D2 maintext CODE >177:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1D3 maintext CODE >180:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1D4 maintext CODE >184:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1DA maintext CODE >187:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1DE maintext CODE >190:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-1E2 maintext CODE >129:/Users/routoure/Dropbox/HOPANDBIKE/software/puissance/dev/Pic12F/DC22M_main.c
-3E6 clrtext CODE >1948:/tmp/xc79LV0Gq
-3E6 clrtext CODE >1949:/tmp/xc79LV0Gq
-3E7 clrtext CODE >1950:/tmp/xc79LV0Gq
-3E7 clrtext CODE >1951:/tmp/xc79LV0Gq
-3E8 clrtext CODE >1952:/tmp/xc79LV0Gq
-3E9 clrtext CODE >1953:/tmp/xc79LV0Gq
-3EA clrtext CODE >1954:/tmp/xc79LV0Gq
-3EB clrtext CODE >1955:/tmp/xc79LV0Gq
+2F3 text20 CODE >341:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2F4 text20 CODE >343:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2F5 text20 CODE >344:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2F6 text20 CODE >346:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2FA text20 CODE >348:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+2FE text20 CODE >351:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+316 text20 CODE >354:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+318 text20 CODE >348:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+320 text20 CODE >359:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+1E3 text19 CODE >446:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+1E4 text19 CODE >448:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+1E5 text19 CODE >451:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+1E9 text19 CODE >453:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+201 text19 CODE >456:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+21C text19 CODE >451:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+224 text19 CODE >460:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3D7 text18 CODE >431:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3D7 text18 CODE >433:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3D9 text18 CODE >435:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3DA text18 CODE >436:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3DB text18 CODE >437:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3DC text18 CODE >438:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3DD text18 CODE >439:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3DE text18 CODE >441:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+EF text17 CODE >205:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+EF text17 CODE >210:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+F4 text17 CODE >211:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+F6 text17 CODE >214:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+FC text17 CODE >216:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+FF text17 CODE >222:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+107 text17 CODE >225:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+10A text17 CODE >229:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+10E text17 CODE >232:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+110 text17 CODE >235:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+111 text17 CODE >236:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+116 text17 CODE >240:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+11F text17 CODE >243:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+121 text17 CODE >247:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+122 text17 CODE >248:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+125 text17 CODE >251:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+125 text17 CODE >254:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+127 text17 CODE >256:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+12B text17 CODE >260:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+12C text17 CODE >261:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+12E text17 CODE >270:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+133 text17 CODE >273:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+134 text17 CODE >276:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+137 text17 CODE >280:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+13B text17 CODE >283:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+13F text17 CODE >285:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+144 text17 CODE >288:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+147 text17 CODE >293:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+148 text17 CODE >294:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+14B text17 CODE >297:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+15C text17 CODE >299:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+168 text17 CODE >302:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+16C text17 CODE >304:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+171 text17 CODE >307:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+174 text17 CODE >312:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+175 text17 CODE >316:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+176 text17 CODE >321:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+370 text16 CODE >326:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+370 text16 CODE >328:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+375 text16 CODE >331:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+381 text16 CODE >332:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+382 text16 CODE >333:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+382 text16 CODE >335:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+35A text15 CODE >199:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+35A text15 CODE >203:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+35C text15 CODE >206:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+360 text15 CODE >207:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+364 text15 CODE >211:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+368 text15 CODE >213:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+36C text15 CODE >216:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+36D text15 CODE >219:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+36E text15 CODE >220:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+3A6 text13 CODE >51:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3A6 text13 CODE >55:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3A9 text13 CODE >59:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3AA text13 CODE >60:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3AB text13 CODE >61:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3AC text13 CODE >62:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3AD text13 CODE >63:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3AE text13 CODE >64:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3AF text13 CODE >68:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3B4 text13 CODE >110:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3CF text12 CODE >431:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3CF text12 CODE >433:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3D1 text12 CODE >435:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3D2 text12 CODE >436:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3D3 text12 CODE >437:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3D4 text12 CODE >438:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3D5 text12 CODE >439:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3D6 text12 CODE >441:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+25F text11 CODE >365:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+261 text11 CODE >367:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+262 text11 CODE >368:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+263 text11 CODE >371:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+266 text11 CODE >374:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+268 text11 CODE >377:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+26C text11 CODE >379:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+274 text11 CODE >377:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+279 text11 CODE >382:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+281 text11 CODE >384:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+285 text11 CODE >388:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+289 text11 CODE >389:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+28B text11 CODE >390:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+28E text11 CODE >391:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+290 text11 CODE >392:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+291 text10 CODE >38:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+293 text10 CODE >40:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+295 text10 CODE >42:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+299 text10 CODE >45:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+2A0 text10 CODE >46:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+2A1 text10 CODE >47:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+2A5 text10 CODE >50:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+2A7 text10 CODE >52:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+2AB text10 CODE >55:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+2B2 text10 CODE >56:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+2B3 text10 CODE >57:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+2B7 text10 CODE >60:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+2BE text10 CODE >61:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+2BF text10 CODE >65:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+2C0 text10 CODE >69:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+3EC text9 CODE >80:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+3EC text9 CODE >82:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+3EF text9 CODE >85:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+3F0 text9 CODE >87:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-NetApp.c
+53 text8 CODE >114:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+53 text8 CODE >118:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+57 text8 CODE >123:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+5B text8 CODE >124:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+5D text8 CODE >127:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+5E text8 CODE >129:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+63 text8 CODE >132:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+64 text8 CODE >134:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+68 text8 CODE >137:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+6C text8 CODE >138:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+6D text8 CODE >139:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+74 text8 CODE >142:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+75 text8 CODE >144:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+76 text8 CODE >147:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+7D text8 CODE >151:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+8C text8 CODE >152:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+9B text8 CODE >154:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+9D text8 CODE >155:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+9F text8 CODE >158:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+A6 text8 CODE >161:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+A9 text8 CODE >164:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+B6 text8 CODE >168:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+C6 text8 CODE >169:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+C8 text8 CODE >172:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+CC text8 CODE >175:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+D9 text8 CODE >178:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+DB text8 CODE >183:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+E0 text8 CODE >185:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+E2 text8 CODE >186:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+E4 text8 CODE >191:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+E8 text8 CODE >195:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+ED text8 CODE >197:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+EE text8 CODE >198:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Bio-Net.c
+3DF text7 CODE >55:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+3DF text7 CODE >58:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+3E2 text7 CODE >60:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+3E3 text7 CODE >61:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+3E4 text7 CODE >64:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+322 text6 CODE >73:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+322 text6 CODE >76:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+32C text6 CODE >77:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+331 text6 CODE >78:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+33A text6 CODE >80:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+397 text5 CODE >42:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+399 text5 CODE >45:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+3A4 text5 CODE >48:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+3A5 text5 CODE >49:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+227 text4 CODE >25:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+227 text4 CODE >29:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+22B text4 CODE >31:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+22D text4 CODE >32:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+230 text4 CODE >33:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+231 text4 CODE >36:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+234 text4 CODE >39:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+238 text4 CODE >43:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+23E text4 CODE >45:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+242 text4 CODE >47:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+243 text4 CODE >50:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+247 text4 CODE >52:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+249 text4 CODE >54:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+24E text4 CODE >55:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+24F text4 CODE >57:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+253 text4 CODE >61:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+257 text4 CODE >63:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+25D text4 CODE >65:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+25E text4 CODE >69:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_Ana.c
+3F2 text3 CODE >21:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_HdW.c
+3F2 text3 CODE >24:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_HdW.c
+3F4 text3 CODE >37:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_HdW.c
+385 text2 CODE >15:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Uart.c
+385 text2 CODE >20:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Uart.c
+387 text2 CODE >21:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Uart.c
+388 text2 CODE >25:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Uart.c
+38A text2 CODE >26:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Uart.c
+38B text2 CODE >27:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Uart.c
+38C text2 CODE >30:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Uart.c
+38E text2 CODE >31:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Uart.c
+390 text2 CODE >38:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Uart.c
+392 text2 CODE >41:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Uart.c
+394 text2 CODE >42:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Uart.c
+395 text2 CODE >43:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Uart.c
+396 text2 CODE >98:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Uart.c
+3C2 text1 CODE >12:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+3C2 text1 CODE >17:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+3C4 text1 CODE >18:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+3C6 text1 CODE >21:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+3C8 text1 CODE >22:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+3CA text1 CODE >24:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+3CD text1 CODE >33:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+3CE text1 CODE >37:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/Hdw_Adc.c
+17F maintext CODE >110:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+17F maintext CODE >114:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+180 maintext CODE >115:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+181 maintext CODE >116:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+182 maintext CODE >117:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+183 maintext CODE >123:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+186 maintext CODE >124:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+188 maintext CODE >126:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+18A maintext CODE >127:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+18C maintext CODE >131:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+18D maintext CODE >141:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+18E maintext CODE >142:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+193 maintext CODE >143:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1A0 maintext CODE >146:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1A2 maintext CODE >148:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1A4 maintext CODE >149:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1A5 maintext CODE >152:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1A6 maintext CODE >156:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1AA maintext CODE >158:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1AD maintext CODE >159:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1B1 maintext CODE >161:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1B4 maintext CODE >162:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1B8 maintext CODE >165:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1BA maintext CODE >166:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1BC maintext CODE >167:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1C4 maintext CODE >168:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1C9 maintext CODE >169:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1CA maintext CODE >171:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1CE maintext CODE >174:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1D0 maintext CODE >176:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1D2 maintext CODE >177:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1D3 maintext CODE >180:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1D4 maintext CODE >184:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1DA maintext CODE >187:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1DE maintext CODE >190:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+1E2 maintext CODE >129:/Users/routoure/Dropbox/HOPANDBIKE/!!! github hope-bike/source_code/power_management_card/Pic12F/DC22M_main.c
+3E6 clrtext CODE >1948:/tmp/xcHx6G5tz
+3E6 clrtext CODE >1949:/tmp/xcHx6G5tz
+3E7 clrtext CODE >1950:/tmp/xcHx6G5tz
+3E7 clrtext CODE >1951:/tmp/xcHx6G5tz
+3E8 clrtext CODE >1952:/tmp/xcHx6G5tz
+3E9 clrtext CODE >1953:/tmp/xcHx6G5tz
+3EA clrtext CODE >1954:/tmp/xcHx6G5tz
+3EB clrtext CODE >1955:/tmp/xcHx6G5tz
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -477,11 +477,11 @@ _SYNC CF4 0 ABS 0 - dist/default/production/Pic12F.production.obj
 _TXEN CF5 0 ABS 0 - dist/default/production/Pic12F.production.obj
 _TXIE 48C 0 ABS 0 - dist/default/production/Pic12F.production.obj
 _TXIF 8C 0 ABS 0 - dist/default/production/Pic12F.production.obj
-___sp 0 0 STACK 2 stack /tmp/xcGbz1rTc.obj
+___sp 0 0 STACK 2 stack /tmp/xc8UVr7nN.obj
 _main 2FE 0 CODE 0 maintext dist/default/production/Pic12F.production.obj
 btemp 7E 0 ABS 0 - dist/default/production/Pic12F.production.obj
 ltemp 7E 0 ABS 0 - dist/default/production/Pic12F.production.obj
-start 92 0 CODE 0 init /tmp/xcGbz1rTc.obj
+start 92 0 CODE 0 init /tmp/xc8UVr7nN.obj
 ttemp 7E 0 ABS 0 - dist/default/production/Pic12F.production.obj
 wtemp 7E 0 ABS 0 - dist/default/production/Pic12F.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production/Pic12F.production.obj
@@ -499,12 +499,12 @@ ttemp2 84 0 ABS 0 - dist/default/production/Pic12F.production.obj
 ttemp3 87 0 ABS 0 - dist/default/production/Pic12F.production.obj
 ttemp4 7F 0 ABS 0 - dist/default/production/Pic12F.production.obj
 IsOKChecksum@u8SizeFrame 73 0 COMMON 1 cstackCOMMON dist/default/production/Pic12F.production.obj
-intlevel0 0 0 CODE 0 functab /tmp/xcGbz1rTc.obj
-intlevel1 0 0 CODE 0 functab /tmp/xcGbz1rTc.obj
-intlevel2 0 0 CODE 0 functab /tmp/xcGbz1rTc.obj
-intlevel3 0 0 CODE 0 functab /tmp/xcGbz1rTc.obj
-intlevel4 0 0 CODE 0 functab /tmp/xcGbz1rTc.obj
-intlevel5 0 0 CODE 0 functab /tmp/xcGbz1rTc.obj
+intlevel0 0 0 CODE 0 functab /tmp/xc8UVr7nN.obj
+intlevel1 0 0 CODE 0 functab /tmp/xc8UVr7nN.obj
+intlevel2 0 0 CODE 0 functab /tmp/xc8UVr7nN.obj
+intlevel3 0 0 CODE 0 functab /tmp/xc8UVr7nN.obj
+intlevel4 0 0 CODE 0 functab /tmp/xc8UVr7nN.obj
+intlevel5 0 0 CODE 0 functab /tmp/xc8UVr7nN.obj
 wtemp0 7E 0 ABS 0 - dist/default/production/Pic12F.production.obj
 wtemp1 80 0 ABS 0 - dist/default/production/Pic12F.production.obj
 wtemp2 82 0 ABS 0 - dist/default/production/Pic12F.production.obj
@@ -571,7 +571,7 @@ _TRISA2 462 0 ABS 0 - dist/default/production/Pic12F.production.obj
 ?_pGetVafConf 76 0 COMMON 1 cstackCOMMON dist/default/production/Pic12F.production.obj
 IsOk_CallBackRead@Result 47 0 BANK0 1 cstackBANK0 dist/default/production/Pic12F.production.obj
 _CalculChecksumAndSend 4BE 0 CODE 0 text11 dist/default/production/Pic12F.production.obj
-___int_sp 0 0 STACK 2 stack /tmp/xcGbz1rTc.obj
+___int_sp 0 0 STACK 2 stack /tmp/xc8UVr7nN.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 BANK2 1 bank2 -
@@ -733,7 +733,7 @@ __end_of_isr 92 0 CODE 0 intentry dist/default/production/Pic12F.production.obj
 _Hdw_AdcIsOkReadAna 7BE 0 CODE 0 text7 dist/default/production/Pic12F.production.obj
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production/Pic12F.production.obj
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcGbz1rTc.obj
+reset_vec 0 0 CODE 0 reset_vec /tmp/xc8UVr7nN.obj
 __size_of_Hdw_AdcInit 0 0 ABS 0 - dist/default/production/Pic12F.production.obj
 __size_of___wmul 0 0 ABS 0 - dist/default/production/Pic12F.production.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
@@ -789,8 +789,8 @@ _IsOKVarIsForUs 5E6 0 CODE 0 text20 dist/default/production/Pic12F.production.ob
 ___wmul@multiplier 70 0 COMMON 1 cstackCOMMON dist/default/production/Pic12F.production.obj
 __size_of_Hdw_AdcStartReadChannel 0 0 ABS 0 - dist/default/production/Pic12F.production.obj
 __size_of_IsOk_CallBackWrite 0 0 ABS 0 - dist/default/production/Pic12F.production.obj
-stackhi 206F 0 ABS 0 - /tmp/xcGbz1rTc.obj
-stacklo 203B 0 ABS 0 - /tmp/xcGbz1rTc.obj
+stackhi 206F 0 ABS 0 - /tmp/xc8UVr7nN.obj
+stacklo 203B 0 ABS 0 - /tmp/xc8UVr7nN.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production/Pic12F.production.obj
 _u8PedalageCpt 34 0 BANK0 1 bssBANK0 dist/default/production/Pic12F.production.obj
 __Lspace_0 0 0 ABS 0 - -

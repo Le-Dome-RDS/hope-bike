@@ -5,7 +5,7 @@ Linker command line:
 --edf=/Applications/microchip/xc8/v1.38/dat/en_msgs.txt -cs \
   -h+dist/default/production/Pic12F.production.sym \
   --cmf=dist/default/production/Pic12F.production.cmf -z -Q12F1822 \
-  -o/tmp/xcRDJdGWR -Mdist/default/production/Pic12F.production.map -E1 \
+  -o/tmp/xcBfl8d3m -Mdist/default/production/Pic12F.production.map -E1 \
   -ver=XC8 -ASTACK=0203Bh-0206fh -pstack=STACK -ACODE=00h-07FFh \
   -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 -ACONST=00h-0FFhx8 \
   -AENTRY=00h-0FFhx8 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0BFh \
@@ -25,7 +25,7 @@ Linker command line:
   -pfunctab=CODE -ACONFIG=08007h-08008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k /tmp/xcGbz1rTc.obj \
+  -DENTRY=2 -k /tmp/xc8UVr7nN.obj \
   dist/default/production/Pic12F.production.obj 
 
 Object code version is 3.11
@@ -35,7 +35,7 @@ Machine type is 12F1822
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcGbz1rTc.obj
+/tmp/xc8UVr7nN.obj
                 end_init                             49       49        1        8       0
                 reset_vec                             0        0        1        0       0
                 config                             8007     8007        2    1000E       0
