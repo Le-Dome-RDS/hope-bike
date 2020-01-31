@@ -5,6 +5,8 @@
     hnb_drive_beta.ino : beta testing version by Sylvain GARNAVAULT
     Version 0.99  BY JMR
 
+    version for hardware v2 by Jean-Marc Routoure. GREYC. Unicaen
+
     
 
     This program is free software: you can redistribute it and/or modify
@@ -21,14 +23,12 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-/* Version 0.99 */
+/* Version v2 0.99 */
 // Machine d'état pour controller le système
 // controle de la  vitesse et du courant avec 3 niveaux de vitesse et de couple
 // regulation de la vitesse autour d'une consigne ( la vitesse souhaitée) avec un correcteur proportionnel
 // Remise à zero de la consigne si l'utilisateur arrete de pédaler pendant plus de 10 s
 // gestion du retro-pédalage
-// dans hnb_power : void afficheValeurLed(int valeur) permet d'utiliser les 10 leds de l'afficheur pour lire 
-// une valeur entière décomposée sur 10 bits
 // 
 
 // LE 22/09/2016
@@ -50,17 +50,24 @@ int GEARS[] = {50,67,83};       // Vitesse grosso-modo en charge, la vitesse 10 
 #define HIGH_LEVEL 420          // Seuil haut de la batterie par pas de 0.1V
 
 
+byte speedLevel = 0;              // niveau de vitesse
+byte ConsigneDesiree = 0;         // consigne choisie
+
+
 //****************************************************************************
 // SETUP PROGRAM
 //****************************************************************************
 
-bool MODE=0;                    // Mode de fonctionnement 0=Normal, 1=Debug
+bool MODE=0;                    // Mode de fonctionnement 0=Normal, 1=Debug, 2=test_devices
+// 1 : debug infos will be printed on the display
+// 2 : keyboard, display and I2C devices will be tested
 
 void setup() {
-  MODE = (readKeyboard() != 0); // entrer en mode debug TODO un schunte en direct
-  Serial.begin(19200);          // open serial port, sets data rate to 19200 bps
-  initDisplay();                // initialise les leds
-  if (MODE!=0) testDisplay();   // faire le test des leds en mode debug
+  //setup_i2c()        initialise the i2c protocol
+  setup_keyboard();
+  setup_display();  // in the hnb_leds tab for historical reason
+  
+//  if (MODE==2) test_display();   // faire le test des leds en mode debug
 }
 
 //****************************************************************************
@@ -77,29 +84,26 @@ void loop() {
   // FONCTIONNEMENT NORMAL
   //**************************************************************************
 
-  if (MODE==0) {
+  if ((MODE==0)||(MODE==1)) {
     gestionClavier();
-    if ((ulTimeCurrent - ulTimePrevious) >= 50) {
+    if ((ulTimeCurrent - ulTimePrevious) >= 50) { //Mise à jour toutes les 50 ms
       CalculCourant();
       gestionEtat();
       gestionChronometreArretPedalage();
       gestionPWM();
       mesureBatterie();
-      gestionBionet();
+      gestion_i2c(); // reading of the I2C ADC  
       //serialDebug();
       ulTimePrevious = ulTimeCurrent;
-    }
+    }}
+  else if (MODE==2) {
+    //test_i2c();
+    //test_display();
+    //test_keyboard();
+    //test_devices();
+    //  
   }
+  
 
-  //**************************************************************************
-  // MODE DEBUG
-  //**************************************************************************
-
-  else {
-    if ((ulTimeCurrent - ulTimePrevious) >= 50) {
-      //gestionBatterie();
-      testBionet();
-      ulTimePrevious = ulTimeCurrent;
-    }
-  }
+  
 }

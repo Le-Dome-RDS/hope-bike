@@ -14,10 +14,15 @@
 
 long lastDebounceTime;            // mesure de temporisation pour les boutons
 byte lastButtonPressed;           // mémorisation de la valeur des boutons pour éviter les répétitions
-byte speedLevel = 0;              // niveu de vitesse
-byte ConsigneDesiree = 0;         // consigne choisie
 
 const byte MAX_SPEED_GEAR = (sizeof(GEARS)/sizeof(int));
+
+
+void setup_keyboard(){
+  
+}
+
+
 
 //-----------------------------------------------------------------------------
 // ACTIONS DES BOUTONS
@@ -31,7 +36,7 @@ void gestionClavier() {
     lastDebounceTime  = debounceTime;
     lastButtonPressed = buttonPressed;
     
-    if (buttonPressed != btnNONE) blinkOnceLeft(5);
+    if (buttonPressed != btnNONE) blink_once_display();
     
     switch (buttonPressed) {
       case btnUP :
@@ -66,15 +71,15 @@ int readKeyboard() {
 void goFaster() {
   if (speedLevel< MAX_SPEED_GEAR) speedLevel++;
   else speedLevel = 0;  
-  setBrows(speedLevel*NB_LED_BROWS/MAX_SPEED_GEAR);
+  speed_display(speedLevel*NB_LED_BROWS/MAX_SPEED_GEAR);
 }
 
 void goLower() {
   if (speedLevel>0) speedLevel--;
-  setBrows(speedLevel*NB_LED_BROWS/MAX_SPEED_GEAR);
+  speed_display(speedLevel*NB_LED_BROWS/MAX_SPEED_GEAR);
 }
 
 void stopSpeed() {
   speedLevel = 0;
-  setBrows(0);
+  speed_display(0);
 }

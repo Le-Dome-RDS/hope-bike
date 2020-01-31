@@ -87,7 +87,7 @@ void mesureBatterie() {
     level = map(u16NiveauBatterie,LOW_LEVEL,HIGH_LEVEL,1,NB_LED_MOUTH);
     level = constrain(level,1,NB_LED_MOUTH);
   }
-  setMouth(level);
+  battery_display(level);
 }
 
 
@@ -317,5 +317,3 @@ switch(u8Etat){
 
 
 }
-
-
