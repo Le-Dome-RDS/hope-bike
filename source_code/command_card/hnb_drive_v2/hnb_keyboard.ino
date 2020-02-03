@@ -2,22 +2,6 @@
 // GESTION DU CLAVIER DE COMMANDE
 //****************************************************************************
 
-// définition des id des boutons
-#define btnNONE   0               // aucun bouton n'est appuyé
-#define btnUP     1               // bouton pour augmenter l'assistance
-#define btnDOWN   2               // bouton pour réduire l'assistance
-#define btnSTOP   3               // bouton pour stopper l'assistance
-
-// paramètres pour la lecture des boutons
-#define DEBOUNCE_DELAY  150       // temporisation pour les boutons 
-#define KEYBOARD_ANALOG_INPUT 0   // numéro de port analogique pour les boutons
-
-long lastDebounceTime;            // mesure de temporisation pour les boutons
-byte lastButtonPressed;           // mémorisation de la valeur des boutons pour éviter les répétitions
-
-const byte MAX_SPEED_GEAR = (sizeof(GEARS)/sizeof(int));
-
-
 void setup_keyboard(){
   
 }
@@ -66,17 +50,17 @@ int readKeyboard() {
 // ACTIONS DES BOUTONS
 //-----------------------------------------------------------------------------
 
-#define NB_LED_BROWS 6
+
 
 void goFaster() {
   if (speedLevel< MAX_SPEED_GEAR) speedLevel++;
   else speedLevel = 0;  
-  speed_display(speedLevel*NB_LED_BROWS/MAX_SPEED_GEAR);
+  //speed_display(speedLevel*NB_LED_BROWS/MAX_SPEED_GEAR);
 }
 
 void goLower() {
   if (speedLevel>0) speedLevel--;
-  speed_display(speedLevel*NB_LED_BROWS/MAX_SPEED_GEAR);
+  //speed_display(speedLevel*NB_LED_BROWS/MAX_SPEED_GEAR);
 }
 
 void stopSpeed() {

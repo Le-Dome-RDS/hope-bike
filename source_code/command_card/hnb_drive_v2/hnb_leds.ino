@@ -12,7 +12,6 @@ void speed_display(int speed){
 void battery_display(int battery){
 }
 
-
 void setup_display() {
   
 }

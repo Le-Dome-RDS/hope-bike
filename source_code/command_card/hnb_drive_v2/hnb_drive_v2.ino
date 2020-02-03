@@ -40,7 +40,7 @@
 
 
 //****************************************************************************
-// DEFINITION DES VALEURS UTILISATEURS
+// GLOBAL USER VARIABLES
 //****************************************************************************
 
 int GEARS[] = {50,67,83};       // Vitesse grosso-modo en charge, la vitesse 10 correspond à 3 km/h et c'est lineaire
