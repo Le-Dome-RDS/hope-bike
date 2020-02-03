@@ -37,6 +37,8 @@
 
 // 15/03/2017 : gestion des sur-intensite par création d'un nouvel état avec diminution rapide du PWM
 
+#include "Arduino.h"
+#include "heltec.h"
 
 
 //****************************************************************************
@@ -59,11 +61,11 @@ byte ConsigneDesiree = 0;         // consigne choisie
 //****************************************************************************
 
 bool MODE=0;                    // Mode de fonctionnement 0=Normal, 1=Debug, 2=test_devices
-// 1 : debug infos will be printed on the display
+// 1 : debug infos will be printed on the display in a normal behavior
 // 2 : keyboard, display and I2C devices will be tested
 
 void setup() {
-  //setup_i2c()        initialise the i2c protocol
+  //setup_i2c();      initialise the i2c protocol
   setup_keyboard();
   setup_display();  // in the hnb_leds tab for historical reason
   
@@ -87,6 +89,14 @@ void loop() {
   if ((MODE==0)||(MODE==1)) {
     gestionClavier();
     if ((ulTimeCurrent - ulTimePrevious) >= 50) { //Mise à jour toutes les 50 ms
+      // ----- affichage des infos 
+      Heltec.display->clear();    //clear the display
+      speed_display(1);
+      battery_display(1);
+      if (MODE==1) debug_display();
+      Heltec.display->display();
+      
+      //------------------------------
       CalculCourant();
       gestionEtat();
       gestionChronometreArretPedalage();
