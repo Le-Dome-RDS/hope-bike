@@ -9,21 +9,18 @@ void serialDebug() {
   Serial.print(" / Consigne Desiree : ");
   Serial.println(ConsigneDesiree);
   
-  Serial.print("Courant Moteur [2] : ");
-  Serial.print(u16CourantMoteur);
-  Serial.print(" / en Ampères : ");
-  Serial.print(s16CourantMotUnitAmp);
-  Serial.println(" A");
+  Serial.print("Courant Moteur [2] en mA ");
+  
+  Serial.println(" mA");
 
-  Serial.print("Vitesse Pédalage [7] : ");
-  Serial.println(u8VitessePedale);
+  //Serial.print("Vitesse Pédalage [7] : ");
+  //Serial.println(u16Pedale);
 
   Serial.print("Rotation Roue [8] : ");
-  Serial.println(u8RotationRoue);
+  Serial.println(u16VitesseVelo);
 
   Serial.print("Niveau batterie [15]: ");
-  Serial.println(u16NiveauBatterie);
+  Serial.println(u16Batterie);
 
   Serial.println();
 }
-
