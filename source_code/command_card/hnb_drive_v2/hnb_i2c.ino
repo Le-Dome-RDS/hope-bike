@@ -47,16 +47,18 @@ void setup_i2c() {
   u16CourantMoteurInitial=u16CourantMoteurInitial/10;
 }
 
-int16_t litVitesseRoue() {
+int16_t litVitesseRoue() { // vaut 0 ou 4095... C'est le calcul effectue dans le loop qui permet de déduire la vitesse du vélo
   return adc12bits.readADC_SingleEnded(3);
 }
 
 int16_t litBatterie() {
-  return adc12bits.readADC_SingleEnded(0)/46; //en V;
+  return (adc12bits.readADC_SingleEnded(0))/22; 
+  //gainADC*1000/92=
 }
 
-int16_t litCourant() { // Valeur du courant en A 
-  return (adc12bits.readADC_SingleEnded(1)-u16CourantMoteurInitial)*8;
+int16_t litCourant() { // Valeur du courant en mA 
+  return (adc12bits.readADC_SingleEnded(1)-u16CourantMoteurInitial)*15;
+  //15=gainADC*1000/gain capteur 
 }
 
 int16_t litPedalier() {
@@ -64,34 +66,6 @@ int16_t litPedalier() {
 }
 
 
-void gestion_i2c() {
- 
-  //----------------------------
-  // ECRITURES
-  //----------------------------
-
-  // write Commande moteur
-  // i8PWM is the speed control voltage of the BLDC drive
-  // if (IsOkWriteByteVar(1,i8PWM)) blink_display();
- 
-  //----------------------------
-  // LECTURES
-  //----------------------------
-
-  // lire le courant moteur
-  
-  //if (IsOkReadUIntVar(2,&u16CourantMoteur)) blink_display();
-  
-  // lire la vitesse de pédalage
-  // if (IsOkReadByteVar(7,&u16VitessePedale)) blink_display();
-  
-  // lire la vitesse de rotation de la roue
-  //if (IsOkReadByteVar(8,&u16VitesseVelo)) blink_display();
-  
-  // lire le niveau batterie
-  //if (IsOkReadUIntVar(15,&u16NiveauBatterie)) blink_display();
-  
-}
 
 void test_i2c() {
  for (byte i=1;i<127;i++){

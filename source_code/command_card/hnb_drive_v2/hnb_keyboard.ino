@@ -36,7 +36,6 @@ void gestionClavier() {
 //        goLower();
 //        break;        
 //      }
-    ConsigneDesiree = (speedLevel!=0) ? CONSIGNE[speedLevel-1] : 0;
 //    }
 }
 
@@ -55,8 +54,8 @@ int readKeyboard() {
 
 
 void goFaster() {
-  if (speedLevel< MAX_SPEED_GEAR) speedLevel++;
-  else speedLevel = 0;  
+  //if (speedLevel< MAX_SPEED_GEAR) speedLevel++;
+  //else speedLevel = 0;  
   //speed_display(speedLevel*NB_LED_BROWS/MAX_SPEED_GEAR);
 }
 

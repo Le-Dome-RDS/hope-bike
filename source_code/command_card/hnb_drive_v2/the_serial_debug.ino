@@ -3,7 +3,7 @@ void serialDebug() {
   Serial.println();
   
   Serial.print("Commande Moteur Reelle [1] : ");
-  Serial.print(i8PWM);
+  Serial.print(u16PWM);
   //Serial.print(" / Commande Moteur : ");
   //Serial.print(CommandeMoteur);
   Serial.print(" / Consigne Desiree : ");

@@ -33,7 +33,7 @@ void gestionEtat(){
 int s16courantLimit=0;
 
 switch (speedLevel){
-  case 0: s16courantLimit=COURANT_MOTEUR_LIMITE_0;break;
+  case 0: s16courantLimit=COURANT_MOTEUR_LIMITE_0;ConsigneDesiree=0;break;
   case 1: s16courantLimit=COURANT_MOTEUR_LIMITE_1;ConsigneDesiree=VITESSE_1;break;
   case 2: s16courantLimit=COURANT_MOTEUR_LIMITE_2;ConsigneDesiree=VITESSE_2;break;
   case 3: s16courantLimit=COURANT_MOTEUR_LIMITE_3;ConsigneDesiree=VITESSE_3;break;
@@ -41,17 +41,16 @@ switch (speedLevel){
 
 if (u16Courant>COURANT_MOTEUR_MAX) u8Etat=ETAT_ARRET;
 
-if (pedalage) {
+if (bPedalage) {
   
 switch(u8Etat){
   //---------------------- Velo à l'arret 
   case ETAT_ARRET:
    
-   if (ConsigneDesiree>=1) {
+   if (ConsigneDesiree>0) {
     u8Etat=ETAT_DEMARRAGE;
     bChronoArretPedalage         =  false;
-   }
-   
+   }  
   break;
   //---------------------- 
   case ETAT_DEMARRAGE:
@@ -64,7 +63,7 @@ switch(u8Etat){
    case ETAT_AUGMENTE_PWM:
    if ( (u16Courant<s16courantLimit) && (u16VitesseVelo>=ConsigneDesiree-VITESSE_REGULATION_SEUIL)){
       u8Etat=ETAT_REGULATION ;
-      i8PWMTemp=i8PWM;
+      u16PWMTemp=u16PWM;
    }
    else if (u16Courant>=s16courantLimit) 
       u8Etat=ETAT_DIMINUE_PWM ;    
@@ -72,11 +71,11 @@ switch(u8Etat){
 
   //---------------------- 
   case ETAT_DIMINUE_PWM:
-  if ( (u16VitesseVelo<ConsigneDesiree-VITESSE_REGULATION_SEUIL)&&(u16Courant<=s16courantLimit) )
+  if ( (u16VitesseVelo<ConsigneDesiree-VITESSE_REGULATION_SEUIL)&&(u16Courant<s16courantLimit) )
       u8Etat=ETAT_AUGMENTE_PWM;
    else if (u16VitesseVelo>=ConsigneDesiree-VITESSE_REGULATION_SEUIL){
       u8Etat=ETAT_REGULATION ;
-      i8PWMTemp=i8PWM;
+      u16PWMTemp=u16PWM;
    }
   break;
   //---------------------- 
@@ -103,24 +102,22 @@ byte gain=2;
 
 switch(u8Etat){
   case ETAT_ARRET:
-   i8PWM=0;
+   u16PWM=0;
   break;
   
   case ETAT_DEMARRAGE:
-   i8PWM=PWM_DEMARRAGE;
+   u16PWM=PWM_DEMARRAGE;
   break;
 
   case ETAT_AUGMENTE_PWM:
-   i8PWM=i8PWM+1;
+   u16PWM=u16PWM+1;
   break;
 
   case ETAT_DIMINUE_PWM:
-    i8PWM=i8PWM-1;
-    if (i8PWM<0) i8PWM=0;
+    u16PWM=u16PWM-1;
+    if (u16PWM<0) u16PWM=0;
   break;
 
-  
-  
   //-----------------------------------------------------------------------------
   // REGULATION en VITESSE, on realise un correcteur proportionnel 
   // PWM=K(Consigne-vitesse rotation roue)
@@ -129,14 +126,11 @@ switch(u8Etat){
 
   case ETAT_REGULATION:
     if (abs(gain*( ConsigneDesiree- u16VitesseVelo ))<=5) 
-         i8PWM=i8PWMTemp+gain*( ConsigneDesiree-u16VitesseVelo );
-    else if (gain*( ConsigneDesiree- u16VitesseVelo )>5) i8PWM=i8PWMTemp+5;
-    else if (gain*( ConsigneDesiree- u16VitesseVelo )<-5) i8PWM=i8PWMTemp-5;
+         u16PWM=u16PWMTemp+gain*( ConsigneDesiree-u16VitesseVelo );
+    else if (gain*( ConsigneDesiree- u16VitesseVelo )>5) u16PWM=u16PWMTemp+5;
+    else if (gain*( ConsigneDesiree- u16VitesseVelo )<-5) u16PWM=u16PWMTemp-5;
   break;
-  
-}
 
-
-
-
+  dac12bits.setVoltage(u16PWM,true);
+  }
 }

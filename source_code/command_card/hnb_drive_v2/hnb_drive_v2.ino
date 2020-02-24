@@ -5,8 +5,8 @@
     hnb_drive_beta.ino : beta testing version by Sylvain GARNAVAULT
     Version 0.99  BY JMR
 
-    version for hardware v2 by Jean-Marc Routoure. GREYC. Unicaen
-
+    version for hardware v2 by Sylvain Legargy & Jean-Marc Routoure. GREYC.
+    Universite de Caen-Normandie/CNRS.
     
 
     This program is free software: you can redistribute it and/or modify
@@ -50,11 +50,6 @@
 // GLOBAL USER VARIABLES
 //****************************************************************************
 
-int CONSIGNE[] = {50,67,83};       // Vitesse grosso-modo en charge, la vitesse 10 correspond à 3 km/h et c'est lineaire
-// ici, on a donc 15, 20 et 25 km/h
-#define ABSOLUTE_MAX_SPEED  80  // seuil maximum pour la commande moteur
-#define LOW_LEVEL  340          // Seuil bas de la batterie par pas de 0.1V
-#define HIGH_LEVEL 420          // Seuil haut de la batterie par pas de 0.1V
 
 int MODE=1;                    // Mode de fonctionnement 0=Normal, 1=Debug, 2=test_devices
 int DEBUG=0;                   // Envoi d'info sur le port série
@@ -63,11 +58,6 @@ int DEBUG=0;                   // Envoi d'info sur le port série
 
 byte speedLevel = 1;              // niveau de vitesse
 byte ConsigneDesiree = 0;         // consigne choisie
-
-
-
-
-
 
 
 // Gestion de l'horloge à 5 ms
@@ -88,8 +78,6 @@ void IRAM_ATTR onTimer() {
 // SETUP PROGRAM
 //****************************************************************************
 
-
-
 void setup() {
   //initialisation d'une horloge interne à 5 ms
   timer = timerBegin(0, 80, true);            //precaler 80
@@ -97,22 +85,17 @@ void setup() {
   timerAlarmWrite(timer, 5000, true);        // 5ms
   timerAlarmEnable(timer);
   // -------------------------------------------------------------
-  
-  
+    
   setup_i2c();      
   //setup_keyboard();
   //setup_display();  
-
   
 }
-
-
 
 
 //****************************************************************************
 // MAIN LOOP
 //****************************************************************************
-
 
 long k=0;
 int16_t         u16adcRouePrecedent=0,u16adcRoueMaintenant=0; //valeur lue sur l'ADC
@@ -120,23 +103,19 @@ int16_t         u16Batterie=0;                                //Niveau de la bat
 int16_t         u16Courant=0;                                 //Valeur du courant débité en mA;
 int16_t         u16CourantMoteurInitial     = 0;            // Valeur du courant au démarrage du vélo
 int16_t         u16Pedalier=0;                                //Valeur lue sur l'
-
 int16_t         u16VitesseVelo     = 0;                       // vitesse de rotation de la roue déduite      
-boolean         pedalage=false;                             // Est égale à 1 si un pédalage est détecté
+boolean         bPedalage=false;                             // Est égale à true si un pédalage est détecté
 byte            u8Etat= 0;                                  // Etat du velo
 // chronometre pour mettre à zero la consigne si l'utilisateur ne pedale pas pendant plus de 5 secondes
 boolean         bChronoArretPedalage         =  false;      // est ce que le chronometre a demarré
 unsigned long   u32ChronoArrretDebut   =  millis();         //valeur du temps au demarrage du chronometre
-int8_t          i8PWMTemp              = 0;                 // la valeur PWM  temporaire utilisee pour rendre continue PWM
-int8_t          i8PWM = 0;                                  // CRITURE BIONET la valeur PWM  envoyée au moteur 
-
-
+int16_t         u16PWMTemp              = 0;                 // la valeur PWM  temporaire utilisee pour rendre continue PWM
+int16_t         u16PWM = 0;                                  // CRITURE BIONET la valeur PWM  envoyée au moteur 
 
 void loop() {
 byte front=0;
 
-
-if ((MODE==1)) {
+if ((MODE==1)||(MODE==0)) {
   //**************************************************************************
   // FONCTIONNEMENT NORMAL
   //**************************************************************************
@@ -156,8 +135,6 @@ if ((MODE==1)) {
     numberOfInterrupts=0;
   }
   if (numberOfInterrupts>300) u16VitesseVelo=0;
-
-  // mesure des informations, calcul et affichage
   
   switch(k%5){
     case 0: //On mesure la batterie
@@ -167,10 +144,9 @@ if ((MODE==1)) {
        u16Courant=litCourant();
        break;
     case 2: // on mesure le pédalier;
-       pedalage=false;
+       bPedalage=false;
        u16Pedalier=litPedalier();
-       if (u16Pedalier>500 && u16Pedalier<1500) pedalage=true;   
-
+       if (u16Pedalier>500 && u16Pedalier<1500) bPedalage=true;   
        break;
     case 3:// on gere le clavier et la machine d'état;
        gestionEtat();
@@ -178,35 +154,19 @@ if ((MODE==1)) {
        break;   
     case 4: // ,On affiche les résultats
       Heltec.display->clear();    //clear the display
-      afficheVitesseVelo(u16VitesseVelo);
-      afficheBatterie(u16Batterie);
-      afficheCourant(u16Courant);
-      affichePedalier(u16Pedalier);
-      afficheMode(u8Etat);
-      afficheCommande(i8PWM);
+      afficheVitesseVelo();
+      afficheBatterie();
+      afficheCourant();
+      affichePedalier();
+      afficheEtat();
+      afficheCommande();
       Heltec.display->display();  
-      if (DEBUG==1) Serial.print("OK"); Serial.print(" ");
-    break;
-      default:break;
-  }
-  k++;
-  if (DEBUG==1) Serial.print(u16adcRouePrecedent); Serial.print(" ");
-  
-  if (DEBUG==1) Serial.print(u16VitesseVelo); Serial.print(" ");
-  if (DEBUG==1) Serial.print(k); Serial.print(" ");
-  if (DEBUG==1) Serial.print(k%5); Serial.println(" ");
-  
-
-  
-    
-      //
-      //gestionChronometreArretPedalage();
-      //gestionPWM();
-      //mesureBatterie();
-      //gestion_i2c(); // reading of the I2C ADC  
-      //serialDebug();
-      //k++;
+      break;
+    default:break;
     }
+  k++;
+  if (DEBUG==1) serialDebug();
+  }
   else if (MODE==2) {
     //test_i2c();
     //test_display();

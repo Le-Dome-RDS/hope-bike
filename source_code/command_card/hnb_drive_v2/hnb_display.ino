@@ -5,54 +5,53 @@ void blink_once_display(){
 }
 
 
-void afficheMode(int8_t mode){
+void afficheEtat(){
   if (MODE==1){
   Heltec.display->drawString(0, 0,"Mode:");
-  Heltec.display->drawString(60, 0, String(mode));
+  Heltec.display->drawString(60, 0, String(u8Etat));
   }
 }
 
-void afficheCommande(int8_t commande){
+void afficheCommande(){
   if (MODE==1){
   Heltec.display->drawString(0, 10,"Commande:");
-  Heltec.display->drawString(60, 10, String(commande));
+  Heltec.display->drawString(60, 10, String(u16PWM));
   }
 }
 
 
-void afficheBatterie(int16_t batterie){
+void afficheBatterie(){
   if (MODE==1){
      Heltec.display->drawString(0, 20,"Batterie:");
-     Heltec.display->drawString(60, 20, String(batterie));
-     Heltec.display->drawString(80, 20,"V");
+     Heltec.display->drawString(60, 20, String(u16Batterie));
+     Heltec.display->drawString(100, 20,"mV");
   }
 
 }
 
-void afficheCourant(int16_t courant){
+void afficheCourant(){
   if (MODE==1){
   Heltec.display->drawString(0, 30,"Courant:");
-     Heltec.display->drawString(60, 30, String(courant));
-     Heltec.display->drawString(80, 30,"mA");
+     Heltec.display->drawString(60, 30, String(u16Courant));
+     Heltec.display->drawString(100, 30,"mA");
   }
 }
-void afficheVitesseVelo(int16_t vitesse){
+void afficheVitesseVelo(){
   if (MODE==1){
   Heltec.display->drawString(0, 40,"Vitesse:"); 
-  Heltec.display->drawString(60, 40, String(vitesse));
-  Heltec.display->drawString(80, 40, "km/h");
+  Heltec.display->drawString(60, 40, String(u16VitesseVelo));
+  Heltec.display->drawString(100, 40, "m/h");
   
   }
 }
 
-void affichePedalier(int16_t pedalier){
+void affichePedalier(){
   if (MODE==1){
   Heltec.display->drawString(0, 50,"Pedalier:");
-  Heltec.display->drawString(60, 50, String(pedalier));
-  if (pedalage) Heltec.display->drawString(80, 50, "Pédalage");   
+  Heltec.display->drawString(60, 50, String(u16Pedalier));
+  if (bPedalage) Heltec.display->drawString(100, 50, "Pédalage");   
   }
 }
-
 
 
 void setup_display() {

@@ -1,6 +1,5 @@
 // Definition 
 
-
 #define ETAT_ARRET                0
 #define ETAT_DEMARRAGE            1
 #define ETAT_AUGMENTE_PWM         2
@@ -21,8 +20,6 @@
 #define VITESSE_1   10000  // valeur de la vitesse 1
 #define VITESSE_2   17000  // valeur de la vitesse 2
 #define VITESSE_3   25000  // valeur de la vitesse 3
-
-
 
 #define COURANT_DEMARRAGE_LIMITE  2000  // valeur limite du courant au demmarrage 
 #define VITESSE_DEMARRAGE_LIMITE  5000  // vitesse de la roue à partir de laquelle le velo accelere j'aurai aimé imposer 20 mais limité à 8 ??
@@ -45,5 +42,3 @@
 
 long lastDebounceTime;            // mesure de temporisation pour les boutons
 byte lastButtonPressed;           // mémorisation de la valeur des boutons pour éviter les répétitions
-
-const byte MAX_SPEED_GEAR = (sizeof(CONSIGNE)/sizeof(int));
