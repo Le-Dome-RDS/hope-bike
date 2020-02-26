@@ -13,6 +13,7 @@ void setup_i2c() {
   
   // --------------------------------------------------Initialisation du DAC 
   dac12bits.begin(0x60);    //12 bits 4096 1,22mV/bit
+  dac12bits.setVoltage(0,true);
   // --------------------------------------------------Initialisation de l'horloge interne 
   MCP7940.begin();
   MCP7940.adjust(); 
@@ -37,32 +38,42 @@ void setup_i2c() {
 
   // with this setup, we have 2mV per bit for the ADC
 
-  // a hall sensor ACS 713 is used to measure de supply current. Its sensisbility is 133mV/A
+  // a hall sensor ACS 713 is used to measure de supply current. Its sensisbility is 133mV/A with 0.5 V for I=0
+  //Vout=0.5+0.133*I
+  
   //  ACS713-30A  , 
 
-  adc12bits.begin();
-  // Lecture du courant de batterie au démarrage
-  for (int i=0;i<10;i++)
-     u16CourantMoteurInitial=u16CourantMoteurInitial+adc12bits.readADC_SingleEnded(1);
-  u16CourantMoteurInitial=u16CourantMoteurInitial/10;
+  
+  delay(1000);
+  
+  u16CourantMoteurInitial=250;
 }
 
-int16_t litVitesseRoue() { // vaut 0 ou 4095... C'est le calcul effectue dans le loop qui permet de déduire la vitesse du vélo
-  return adc12bits.readADC_SingleEnded(3);
+ int16_t litVitesseRoue() { // vaut 0 ou 4095... C'est le calcul effectue dans le loop qui permet de déduire la vitesse du vélo
+  if (VERSION_HARD==1) return adc12bits.readADC_SingleEnded(3);
+  else if (VERSION_HARD==2) return adc12bits.readADC_SingleEnded(2);
 }
 
-int16_t litBatterie() {
-  return (adc12bits.readADC_SingleEnded(0))/22; 
+ int16_t litBatterie() {
+  return (adc12bits.readADC_SingleEnded(0)*1000/46); 
   //gainADC*1000/92=
 }
 
-int16_t litCourant() { // Valeur du courant en mA 
-  return (adc12bits.readADC_SingleEnded(1)-u16CourantMoteurInitial)*15;
-  //15=gainADC*1000/gain capteur 
+ int16_t litCourant() { // Valeur du courant en mA 
+   int16_t calcul;
+  //calcul = adc12bits.readADC_SingleEnded(1);
+  // courant=(N_mesure-N_mesure0)/(0.133*2) pour un résultat en mA.
+  calcul = ((adc12bits.readADC_SingleEnded(1)-u16CourantMoteurInitial)*15)/1;
+  if ((calcul>20000) || (calcul<0)) MODE==1;
+  
+  return calcul;
+  
+  
 }
 
-int16_t litPedalier() {
-  return adc12bits.readADC_SingleEnded(2);
+ int16_t litPedalier() {
+  if (VERSION_HARD==1) return adc12bits.readADC_SingleEnded(2);
+  else if (VERSION_HARD==2) return adc12bits.readADC_SingleEnded(3);
 }
 
 

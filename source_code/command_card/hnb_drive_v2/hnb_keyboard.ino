@@ -1,12 +1,23 @@
+#define BUTTON_GAUCHE 13
+#define BUTTON_GAUCHE 14
+#define BUTTON_GAUCHE 27
+
+
+
+long tempsGauche=0;
+long tempsDroit=0;
+long tempsMilieu=0;
+
+
 //****************************************************************************
 // GESTION DU CLAVIER DE COMMANDE
 //****************************************************************************
 
 
 void setup_keyboard(){
-  pinMode(BUTTON_LEFT, INPUT);
-  pinMode(BUTTON_RIGHT, INPUT);
-  pinMode(BUTTON_OK, INPUT);
+  pinMode(BUTTON_GAUCHE, INPUT);
+  pinMode(BUTTON_DROITE, INPUT);
+  pinMode(BUTTON_MILIEU, INPUT);
   
 }
 //-----------------------------------------------------------------------------
@@ -18,6 +29,7 @@ void gestionClavier() {
   
   byte buttonPressed = readKeyboard();
   unsigned long debounceTime = millis();
+
 
  // if ((buttonPressed != lastButtonPressed) && ((debounceTime - lastDebounceTime) > DEBOUNCE_DELAY)) {
  //   lastDebounceTime  = debounceTime;

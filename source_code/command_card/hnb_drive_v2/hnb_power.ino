@@ -11,7 +11,7 @@ void  gestionChronometreArretPedalage(){
   if ((bChronoArretPedalage) && (millis()-u32ChronoArrretDebut>10000)){
      
         u8Etat=ETAT_ARRET;
-        ConsigneDesiree=0;
+        u16Consigne=0;
         stopSpeed();
         bChronoArretPedalage=false;
    //     afficheValeurLed(255);
@@ -33,10 +33,10 @@ void gestionEtat(){
 int s16courantLimit=0;
 
 switch (speedLevel){
-  case 0: s16courantLimit=COURANT_MOTEUR_LIMITE_0;ConsigneDesiree=0;break;
-  case 1: s16courantLimit=COURANT_MOTEUR_LIMITE_1;ConsigneDesiree=VITESSE_1;break;
-  case 2: s16courantLimit=COURANT_MOTEUR_LIMITE_2;ConsigneDesiree=VITESSE_2;break;
-  case 3: s16courantLimit=COURANT_MOTEUR_LIMITE_3;ConsigneDesiree=VITESSE_3;break;
+  case 0: s16courantLimit=COURANT_MOTEUR_LIMITE_0;u16Consigne=0;break;
+  case 1: s16courantLimit=COURANT_MOTEUR_LIMITE_1;u16Consigne=VITESSE_1;break;
+  case 2: s16courantLimit=COURANT_MOTEUR_LIMITE_2;u16Consigne=VITESSE_2;break;
+  case 3: s16courantLimit=COURANT_MOTEUR_LIMITE_3;u16Consigne=VITESSE_3;break;
 }
 
 if (u16Courant>COURANT_MOTEUR_MAX) u8Etat=ETAT_ARRET;
@@ -47,7 +47,7 @@ switch(u8Etat){
   //---------------------- Velo à l'arret 
   case ETAT_ARRET:
    
-   if (ConsigneDesiree>0) {
+   if (u16Consigne>0) {
     u8Etat=ETAT_DEMARRAGE;
     bChronoArretPedalage         =  false;
    }  
@@ -61,7 +61,7 @@ switch(u8Etat){
   break;
   //---------------------- 
    case ETAT_AUGMENTE_PWM:
-   if ( (u16Courant<s16courantLimit) && (u16VitesseVelo>=ConsigneDesiree-VITESSE_REGULATION_SEUIL)){
+   if ( (u16Courant<s16courantLimit) && (u16VitesseVelo>=u16Consigne-VITESSE_REGULATION_SEUIL)){
       u8Etat=ETAT_REGULATION ;
       u16PWMTemp=u16PWM;
    }
@@ -71,16 +71,16 @@ switch(u8Etat){
 
   //---------------------- 
   case ETAT_DIMINUE_PWM:
-  if ( (u16VitesseVelo<ConsigneDesiree-VITESSE_REGULATION_SEUIL)&&(u16Courant<s16courantLimit) )
+  if ( (u16VitesseVelo<u16Consigne-VITESSE_REGULATION_SEUIL)&&(u16Courant<s16courantLimit) )
       u8Etat=ETAT_AUGMENTE_PWM;
-   else if (u16VitesseVelo>=ConsigneDesiree-VITESSE_REGULATION_SEUIL){
+   else if (u16VitesseVelo>=u16Consigne-VITESSE_REGULATION_SEUIL){
       u8Etat=ETAT_REGULATION ;
       u16PWMTemp=u16PWM;
    }
   break;
   //---------------------- 
     case ETAT_REGULATION:
-   if (  (u16Courant<=s16courantLimit) && (u16VitesseVelo<ConsigneDesiree-VITESSE_REGULATION_SEUIL))
+   if (  (u16Courant<=s16courantLimit) && (u16VitesseVelo<u16Consigne-VITESSE_REGULATION_SEUIL))
     u8Etat=ETAT_AUGMENTE_PWM;
    else if ( (u16Courant>s16courantLimit)  ){   
       u8Etat=ETAT_DIMINUE_PWM ;       
@@ -88,7 +88,7 @@ switch(u8Etat){
    break;
 
   //---------------------- 
-  
+ 
 
   }
 }  
@@ -115,7 +115,6 @@ switch(u8Etat){
 
   case ETAT_DIMINUE_PWM:
     u16PWM=u16PWM-1;
-    if (u16PWM<0) u16PWM=0;
   break;
 
   //-----------------------------------------------------------------------------
@@ -125,12 +124,17 @@ switch(u8Etat){
   //-----------------------------------------------------------------------------
 
   case ETAT_REGULATION:
-    if (abs(gain*( ConsigneDesiree- u16VitesseVelo ))<=5) 
-         u16PWM=u16PWMTemp+gain*( ConsigneDesiree-u16VitesseVelo );
-    else if (gain*( ConsigneDesiree- u16VitesseVelo )>5) u16PWM=u16PWMTemp+5;
-    else if (gain*( ConsigneDesiree- u16VitesseVelo )<-5) u16PWM=u16PWMTemp-5;
+     u16PWM=u16PWMTemp+( u16Consigne-u16VitesseVelo )/100;
+    //else if (gain*( u16Consigne- u16VitesseVelo )>5) u16PWM=u16PWMTemp+5;
+    //else if (gain*( u16Consigne- u16VitesseVelo )<-5) u16PWM=u16PWMTemp-5;
   break;
-
-  dac12bits.setVoltage(u16PWM,true);
+  default:
+    u16PWM=0;
+  break;
   }
+  if (u16PWM>1023)u16PWM=1023;
+  if (u16PWM<0)u16PWM=0;
+  dac12bits.setVoltage(4*u16PWM,true);
+
+  
 }

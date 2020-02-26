@@ -56,8 +56,6 @@ int DEBUG=0;                   // Envoi d'info sur le port série
 // 1 : debug infos will be printed on the display in a normal behavior
 // 2 : keyboard, display and I2C devices will be tested
 
-byte speedLevel = 1;              // niveau de vitesse
-byte ConsigneDesiree = 0;         // consigne choisie
 
 
 // Gestion de l'horloge à 5 ms
@@ -85,10 +83,12 @@ void setup() {
   timerAlarmWrite(timer, 5000, true);        // 5ms
   timerAlarmEnable(timer);
   // -------------------------------------------------------------
+  
+  
+  setup_i2c(); 
+  setup_display();     
+  setup_keyboard();
     
-  setup_i2c();      
-  //setup_keyboard();
-  //setup_display();  
   
 }
 
@@ -96,21 +96,33 @@ void setup() {
 //****************************************************************************
 // MAIN LOOP
 //****************************************************************************
+const int PIN_LED =  25; //25
+const int VERSION_HARD =2;   //VERSION_HARD=2 pour la version du 24/02/2020
 
 long k=0;
-int16_t         u16adcRouePrecedent=0,u16adcRoueMaintenant=0; //valeur lue sur l'ADC
-int16_t         u16Batterie=0;                                //Niveau de la batterie en V;
-int16_t         u16Courant=0;                                 //Valeur du courant débité en mA;
-int16_t         u16CourantMoteurInitial     = 0;            // Valeur du courant au démarrage du vélo
-int16_t         u16Pedalier=0;                                //Valeur lue sur l'
-int16_t         u16VitesseVelo     = 0;                       // vitesse de rotation de la roue déduite      
+  int16_t         u16adcRouePrecedent=0,u16adcRoueMaintenant=0; //valeur lue sur l'ADC
+ int16_t         u16Batterie=0;                                //Niveau de la batterie en V;
+ int16_t         u16Courant=0;                                 //Valeur du courant débité en mA;
+ int16_t         u16CourantMoteurInitial     = 0;            // Valeur du courant au démarrage du vélo
+ int16_t         u16Pedalier=0;                                //Valeur lue sur le pedalier
+ int16_t         u16VitesseVelo     = 0;                       // vitesse de rotation de la roue déduite      
 boolean         bPedalage=false;                             // Est égale à true si un pédalage est détecté
 byte            u8Etat= 0;                                  // Etat du velo
 // chronometre pour mettre à zero la consigne si l'utilisateur ne pedale pas pendant plus de 5 secondes
 boolean         bChronoArretPedalage         =  false;      // est ce que le chronometre a demarré
 unsigned long   u32ChronoArrretDebut   =  millis();         //valeur du temps au demarrage du chronometre
-int16_t         u16PWMTemp              = 0;                 // la valeur PWM  temporaire utilisee pour rendre continue PWM
-int16_t         u16PWM = 0;                                  // CRITURE BIONET la valeur PWM  envoyée au moteur 
+ int16_t         u16PWMTemp              = 0;                 // la valeur PWM  temporaire utilisee pour rendre continue PWM
+ int16_t         u16PWM = 0;                                  // CRITURE BIONET la valeur PWM  envoyée au moteur 
+ int16_t         u16Consigne = 0;         // consigne choisie
+byte             speedLevel = 2;              // niveau de vitesse
+boolean         testLed=false;
+boolean         bBoutonGauche=false;          // Est ce que le bouton gauche est enfoncé
+boolean         bBoutonDroit=false;           //droit 
+boolean         bBoutonMilieu=false;          // milieu
+boolean         bBoutonLongGauche=false;          // Est ce que le bouton gauche est enfoncé longtemps >=1s
+boolean         bBoutonLongDroit=false;           //droit
+boolean         bBoutonLongMilieu=false;          //milieu
+
 
 void loop() {
 byte front=0;
@@ -131,8 +143,12 @@ if ((MODE==1)||(MODE==0)) {
   if (u16adcRouePrecedent<100 && u16adcRoueMaintenant>150) front=1; 
   u16adcRouePrecedent=u16adcRoueMaintenant;
   if (front==1){
-    u16VitesseVelo=1493000/numberOfInterrupts; //en m/h
+    testLed = !testLed;   
+    digitalWrite(PIN_LED, testLed);
+    //if (abs(1493000/numberOfInterrupts-u16VitesseVelo)<=10000) u16VitesseVelo=1493000/numberOfInterrupts; //en m/h
+    u16VitesseVelo=1493000/numberOfInterrupts;
     numberOfInterrupts=0;
+    front=0;
   }
   if (numberOfInterrupts>300) u16VitesseVelo=0;
   
@@ -145,8 +161,10 @@ if ((MODE==1)||(MODE==0)) {
        break;
     case 2: // on mesure le pédalier;
        bPedalage=false;
-       u16Pedalier=litPedalier();
-       if (u16Pedalier>500 && u16Pedalier<1500) bPedalage=true;   
+       u16Pedalier=(9*u16Pedalier+litPedalier())/10;
+       
+       if (u16Pedalier>300 && u16Pedalier<1500) bPedalage=true;   
+       // bPedalage=true;
        break;
     case 3:// on gere le clavier et la machine d'état;
        gestionEtat();
@@ -155,7 +173,8 @@ if ((MODE==1)||(MODE==0)) {
     case 4: // ,On affiche les résultats
       Heltec.display->clear();    //clear the display
       afficheVitesseVelo();
-      afficheBatterie();
+      //afficheBatterie();
+      afficheConsigne();
       afficheCourant();
       affichePedalier();
       afficheEtat();

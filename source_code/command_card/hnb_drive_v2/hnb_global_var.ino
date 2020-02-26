@@ -5,8 +5,10 @@
 #define ETAT_AUGMENTE_PWM         2
 #define ETAT_DIMINUE_PWM          3
 #define ETAT_REGULATION           4
+#define ETAT_ERREUR_CURRENT               5
 
-#define PWM_DEMARRAGE             100
+
+#define PWM_DEMARRAGE             40
 
 /* Les valeurs limites qui gère la machine d'etat */
 
@@ -18,12 +20,12 @@
 #define COURANT_MOTEUR_LIMITE_3   10000  // valeur limite du courant en fonctionnement en vitesse 3
 
 #define VITESSE_1   10000  // valeur de la vitesse 1
-#define VITESSE_2   17000  // valeur de la vitesse 2
+#define VITESSE_2   20000  // valeur de la vitesse 2
 #define VITESSE_3   25000  // valeur de la vitesse 3
 
 #define COURANT_DEMARRAGE_LIMITE  2000  // valeur limite du courant au demmarrage 
-#define VITESSE_DEMARRAGE_LIMITE  5000  // vitesse de la roue à partir de laquelle le velo accelere j'aurai aimé imposer 20 mais limité à 8 ??
-#define VITESSE_REGULATION_SEUIL  5000   // ecart de vitesse par rapport à la consigne qui provoque la regulation de la vitesse
+#define VITESSE_DEMARRAGE_LIMITE  5000  // vitesse de la roue à partir de laquelle le velo accelere ??
+#define VITESSE_REGULATION_SEUIL  2000   // ecart de vitesse par rapport à la consigne qui provoque la regulation de la vitesse
 
 //-----------------------------------------------------------------------------
 // Variable globale

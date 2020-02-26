@@ -7,7 +7,7 @@ void serialDebug() {
   //Serial.print(" / Commande Moteur : ");
   //Serial.print(CommandeMoteur);
   Serial.print(" / Consigne Desiree : ");
-  Serial.println(ConsigneDesiree);
+  Serial.println(u16Consigne);
   
   Serial.print("Courant Moteur [2] en mA ");
   
