@@ -14,13 +14,14 @@ void setup_i2c() {
   // --------------------------------------------------Initialisation du DAC 
   dac12bits.begin(0x60);    //12 bits 4096 1,22mV/bit
   dac12bits.setVoltage(0,true);
+  delay(100);
   // --------------------------------------------------Initialisation de l'horloge interne 
   MCP7940.begin();
   MCP7940.adjust(); 
   enum SquareWaveTypes { Hz1, kHz4, kHz8, kHz32, Hz64 }  ;
   MCP7940.setSQWSpeed(Hz1);
   MCP7940.adjust(DateTime(2020,02,07,00,00,00)); 
-
+  delay(100);
   // --------------------------------------------------Initialisation de l'ADC 
 
   // The ADC input range (or gain) can be changed via the following
@@ -42,38 +43,38 @@ void setup_i2c() {
   //Vout=0.5+0.133*I
   
   //  ACS713-30A  , 
-
+  adc12bits.begin();
   
   delay(1000);
   
-  u16CourantMoteurInitial=250;
+  u16CourantMoteurInitial=250; //0.5V en sortie du capteur orsque le courant est nul.
 }
 
- int16_t litVitesseRoue() { // vaut 0 ou 4095... C'est le calcul effectue dans le loop qui permet de déduire la vitesse du vélo
+ uint16_t litVitesseRoue() { // vaut 0 ou 4095... C'est le calcul effectue dans le loop qui permet de déduire la vitesse du vélo
   if (VERSION_HARD==1) return adc12bits.readADC_SingleEnded(3);
   else if (VERSION_HARD==2) return adc12bits.readADC_SingleEnded(2);
 }
 
- int16_t litBatterie() {
+ uint16_t litBatterie() {
   return (adc12bits.readADC_SingleEnded(0)*1000/46); 
   //gainADC*1000/92=
 }
 
- int16_t litCourant() { // Valeur du courant en mA 
-   int16_t calcul;
+ uint16_t litCourant() { // Valeur du courant en mA 
+   uint16_t calcul;
   //calcul = adc12bits.readADC_SingleEnded(1);
   // courant=(N_mesure-N_mesure0)/(0.133*2) pour un résultat en mA.
-  calcul = ((adc12bits.readADC_SingleEnded(1)-u16CourantMoteurInitial)*15)/1;
-  if ((calcul>20000) || (calcul<0)) MODE==1;
+  calcul = ((adc12bits.readADC_SingleEnded(1)-u16CourantMoteurInitial)*15);
+  //if ((calcul>20000) || (calcul<0)) MODE==1;
   
   return calcul;
   
   
 }
 
- int16_t litPedalier() {
+ uint16_t litPedalier() {
   if (VERSION_HARD==1) return adc12bits.readADC_SingleEnded(2);
-  else if (VERSION_HARD==2) return adc12bits.readADC_SingleEnded(3);
+  else if (VERSION_HARD==2) return adc12bits.readADC_SingleEnded(3 );
 }
 
 

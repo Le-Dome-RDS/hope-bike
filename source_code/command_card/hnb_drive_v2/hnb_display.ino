@@ -1,8 +1,6 @@
 //****************************************************************************
 // OLED screen
 //****************************************************************************
-void blink_once_display(){
-}
 
 
 void afficheEtat(){
@@ -22,7 +20,7 @@ void afficheEtat(){
 void afficheCommande(){
   if (MODE==1){
   Heltec.display->drawString(0, 10,"Commande:");
-  Heltec.display->drawStringMaxWidth(60, 10, 6,String(u16PWM));
+  Heltec.display->drawString(60, 10, String(i16PWM));
   }
 }
 
@@ -30,8 +28,21 @@ void afficheCommande(){
 void afficheBatterie(){
   if (MODE==1){
      Heltec.display->drawString(0, 20,"Batterie:");
-     Heltec.display->drawStringMaxWidth(60, 20, 6,String(u16Batterie));
+     Heltec.display->drawString(60, 20, String(u16Batterie));
      Heltec.display->drawString(100, 20,"mV");
+  } else
+  if (MODE==0) {
+    Heltec.display->drawLine(118,59,103,59);
+    Heltec.display->drawLine(103,59,103,29);
+    Heltec.display->drawLine(103,29,108,29);
+    Heltec.display->drawLine(108,29,108,24);
+    Heltec.display->drawLine(108,24,113,24);
+    Heltec.display->drawLine(113,24,113,29);
+    Heltec.display->drawLine(113,29,118,29);
+    Heltec.display->drawLine(118,29,118,59);
+    for (int i=0;i<10;i++) {
+     if (30000+i*1000<=u16Batterie)    Heltec.display->drawLine(116,57-i*3,105,57-i*3);
+    }
   }
 
 }
@@ -39,37 +50,49 @@ void afficheBatterie(){
 void afficheCourant(){
   if (MODE==1){
   Heltec.display->drawString(0, 30,"Courant:");
-     if ((u16Courant<0)||(u16Courant>30000)) Heltec.display->drawString(60, 30, "Erreur");
-     else {Heltec.display->drawStringMaxWidth(60, 30,6, String(u16Courant));
-     Heltec.display->drawString(100, 30,"mA");}
+     //if ((u16Courant<0)||(u16Courant>30000)) Heltec.display->drawString(60, 30, "Erreur");
+     //else {
+      Heltec.display->drawString(60, 30, String(u16Courant));
+     Heltec.display->drawString(100, 30,"mA");
   }
 }
 void afficheVitesseVelo(){
   if (MODE==1){
   Heltec.display->drawString(0, 40,"Vitesse:"); 
-  if ((u16VitesseVelo>40000)||(u16VitesseVelo<0))Heltec.display->drawString(60, 40,"Erreur ");
-  else 
-    {
-    Heltec.display->drawStringMaxWidth(60, 40, 6,String(u16VitesseVelo));
+    Heltec.display->drawString(60, 40,String(u16VitesseVelo));
     Heltec.display->drawString(100, 40, "m/h");
     }
+  else
+  if (MODE==0){
+    Heltec.display->setFont(ArialMT_Plain_24);
+    Heltec.display->drawString(50, 24, String(u16VitesseVelo/1000));
+    Heltec.display->setFont(ArialMT_Plain_10);
+    Heltec.display->drawString(50, 48, "km/h");
   }
 }
 
 void affichePedalier(){
-  if (MODE==1){
+  if ((MODE==1)){
   Heltec.display->drawString(0, 50,"Pedalier:");
-  Heltec.display->drawStringMaxWidth(60, 50, 6,String(u16Pedalier));
+  Heltec.display->drawString(60, 50,String(u16Pedalier));
   if (bPedalage) Heltec.display->drawString(100, 50, "*");   
+  }
+  else 
+  if (MODE==0) {
+   if (bPedalage) Heltec.display->drawString(0, 50, "*");   
+  
   }
 }
 
 void afficheConsigne(){
   if (MODE==1){
-  Heltec.display->drawString(0, 20,"Consigne:");
-  Heltec.display->drawStringMaxWidth(60, 20,6, String(u16Consigne));
-  Heltec.display->drawString(100, 20, "m/h");
-  //if (bPedalage) Heltec.display->drawString(100, 50, "Pédalage");   
+    Heltec.display->drawString(0, 20,"Consigne:");
+    Heltec.display->drawString(60, 20, String(u16Consigne));
+    Heltec.display->drawString(100, 20, "m/h");
+  }
+  else 
+  if (MODE==0) {
+    Heltec.display->drawProgressBar(5,5,118,10,speedLevel*33);
   }
 }
 
@@ -77,18 +100,19 @@ void afficheConsigne(){
 
 void setup_display() {
   //
-  Heltec.display->init();
+  // Heltec.display->init();
   Heltec.display->flipScreenVertically();
-  Heltec.display->setFont(ArialMT_Plain_10);
+  Heltec.display->setFont(ArialMT_Plain_16);
   Heltec.display->setTextAlignment(TEXT_ALIGN_CENTER);
   Heltec.display->clear();
-  Heltec.display->drawString(60, 20, "Hope");
-  Heltec.display->drawString(60, 30, "&");
-  Heltec.display->drawString(60, 40, "Bike");
+  Heltec.display->drawString(64, 4, "Hope");
+  Heltec.display->drawString(64, 20, "&");
+  Heltec.display->drawString(64, 36, "Bike");
   
   Heltec.display->display();
   Heltec.display->setTextAlignment(TEXT_ALIGN_LEFT);
  delay(1000);
+ Heltec.display->setFont(ArialMT_Plain_10);
   pinMode(PIN_LED, OUTPUT);
 }
 

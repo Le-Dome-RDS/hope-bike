@@ -1,26 +1,29 @@
 void serialDebug() {
-  Serial.println("------------------------------");
-  Serial.println();
+  Serial.print(" u8Etat: ");
+  Serial.print(u8Etat);
   
-  Serial.print("Commande Moteur Reelle [1] : ");
-  Serial.print(u16PWM);
-  //Serial.print(" / Commande Moteur : ");
-  //Serial.print(CommandeMoteur);
-  Serial.print(" / Consigne Desiree : ");
-  Serial.println(u16Consigne);
+  Serial.print(" i16PWM: ");
+  Serial.print(i16PWM);
+  Serial.print(" Consigne : ");
+  Serial.print(u16Consigne);
   
-  Serial.print("Courant Moteur [2] en mA ");
+  Serial.print(" u16VitesseVelo:");
+  Serial.print(u16VitesseVelo);
   
-  Serial.println(" mA");
+  Serial.print(" u16Courant:");
+  Serial.print(u16Courant);
+  
+  Serial.print(" u16Pedalier:");
+  Serial.print(u16Pedalier);
 
-  //Serial.print("Vitesse Pédalage [7] : ");
-  //Serial.println(u16Pedale);
+  
 
-  Serial.print("Rotation Roue [8] : ");
-  Serial.println(u16VitesseVelo);
+  Serial.print(" u16adcRoueMaintenant:");
+  Serial.print(u16adcRoueMaintenant);
 
-  Serial.print("Niveau batterie [15]: ");
+  Serial.print(" TempsFront:");
+  Serial.print(millis()-tempsFront);
+
+  Serial.print(" u16Batterie:");
   Serial.println(u16Batterie);
-
-  Serial.println();
 }
