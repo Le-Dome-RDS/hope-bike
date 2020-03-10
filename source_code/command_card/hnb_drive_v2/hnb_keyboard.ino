@@ -36,19 +36,20 @@ void setup_keyboard(){
 }
 
 
-void gestionClavierGauche() {
+void gestionClavierMilieu() {
   //lecture==LOW lorsqu'on appuit : à modifier en fonction de l'interrupteur.
-  int lectureGauche=digitalRead(BUTTON_GAUCHE);
-  if ((lectureGauche==LOW)&&(lectureGaucheAvant==HIGH)&&(u8BoutonGauche==PAS_APPUYE))tempsGauche=millis();
-  if (((millis()-tempsGauche)>TEMPS_ANTI_REBOND) && (lectureGauche==LOW) &&(u8BoutonGauche==PAS_APPUYE))u8BoutonGauche=APPUYE;
-  if (((millis()-tempsGauche)>TEMPS_APPUI_LONG) && (lectureGauche==LOW) &&(u8BoutonGauche==APPUYE)) u8BoutonGauche=APPUYE_LONG;
-  if (((millis()-tempsGauche)>TEMPS_ANTI_REBOND) && (lectureGauche==HIGH)&&(u8BoutonGauche==APPUYE))u8BoutonGauche=RELACHE;
+  int lectureMilieu=digitalRead(BUTTON_MILIEU);
+  if ((lectureMilieu==LOW)&&(lectureMilieuAvant==HIGH)&&(u8BoutonMilieu==PAS_APPUYE))tempsMilieu=millis();
+  if (((millis()-tempsMilieu)>TEMPS_ANTI_REBOND) && (lectureMilieu==LOW) &&(u8BoutonMilieu==PAS_APPUYE))u8BoutonMilieu=APPUYE;
+  if (((millis()-tempsMilieu)>TEMPS_APPUI_LONG) && (lectureMilieu==LOW) &&(u8BoutonMilieu==APPUYE)) u8BoutonMilieu=APPUYE_LONG;
+  if (((millis()-tempsMilieu)>TEMPS_ANTI_REBOND) && (lectureMilieu==HIGH)&&(u8BoutonMilieu==APPUYE))u8BoutonMilieu=RELACHE;
   
-  lectureGaucheAvant=lectureGauche;
+  lectureMilieuAvant=lectureMilieu;
   
 }
 
 void gestionClavierDroit() {
+  //lecture=LOW lorsqu'on appuit
   int lectureDroit=digitalRead(BUTTON_DROIT);
   if ((lectureDroit==LOW)&&(lectureDroitAvant==HIGH)&&(u8BoutonDroit==PAS_APPUYE))tempsDroit=millis();
   if (((millis()-tempsDroit)>TEMPS_ANTI_REBOND) && (lectureDroit==LOW) &&(u8BoutonDroit==PAS_APPUYE))u8BoutonDroit=APPUYE;
@@ -57,14 +58,14 @@ void gestionClavierDroit() {
   lectureDroitAvant=lectureDroit;
 }
 
-void gestionClavierMilieu() {
+void gestionClavierGauche() {
   //lecture==HIGH lorsqu'on appuit : à modifier en fonction de l'interrupteur.
-  int lectureMilieu=digitalRead(BUTTON_MILIEU);
-  if ((lectureMilieu==HIGH)&&(lectureMilieuAvant==LOW)&&(u8BoutonMilieu==PAS_APPUYE))tempsMilieu=millis();
-  if (((millis()-tempsMilieu)>TEMPS_ANTI_REBOND) && (lectureMilieu==HIGH) &&(u8BoutonMilieu==PAS_APPUYE))u8BoutonMilieu=APPUYE;
-  if (((millis()-tempsMilieu)>TEMPS_APPUI_LONG) && (lectureMilieu==HIGH) &&(u8BoutonMilieu==APPUYE)) u8BoutonMilieu=APPUYE_LONG;
-  if (((millis()-tempsMilieu)>TEMPS_ANTI_REBOND) && (lectureMilieu==LOW)&&(u8BoutonMilieu==APPUYE))u8BoutonMilieu=RELACHE;
-  lectureMilieuAvant=lectureMilieu;
+  int lectureGauche=digitalRead(BUTTON_GAUCHE);
+  if ((lectureGauche==HIGH)&&(lectureGaucheAvant==LOW)&&(u8BoutonGauche==PAS_APPUYE))tempsGauche=millis();
+  if (((millis()-tempsGauche)>TEMPS_ANTI_REBOND) && (lectureGauche==HIGH) &&(u8BoutonGauche==PAS_APPUYE))u8BoutonGauche=APPUYE;
+  if (((millis()-tempsGauche)>TEMPS_APPUI_LONG) && (lectureGauche==HIGH) &&(u8BoutonGauche==APPUYE)) u8BoutonGauche=APPUYE_LONG;
+  if (((millis()-tempsGauche)>TEMPS_ANTI_REBOND) && (lectureGauche==LOW)&&(u8BoutonGauche==APPUYE))u8BoutonGauche=RELACHE;
+  lectureGaucheAvant=lectureGauche;
 
 }
 
@@ -74,9 +75,9 @@ void gestionClavier(){
   gestionClavierMilieu();
 
   // gestion de la vitesse
-  if ((u8BoutonGauche==RELACHE)&&(speedLevel>=1)) {speedLevel--;u8BoutonGauche=PAS_APPUYE;}
-  if ((u8BoutonDroit==RELACHE)&&(speedLevel<=2)) {speedLevel++;u8BoutonDroit=PAS_APPUYE;}
-  if (u8BoutonMilieu==RELACHE) {speedLevel=0;u8BoutonMilieu=PAS_APPUYE;}
+  if ((u8BoutonMilieu==RELACHE)&&(speedLevel>=1)) {speedLevel--;u8BoutonMilieu=PAS_APPUYE;}
+  if ((u8BoutonDroit==RELACHE)&&(speedLevel<=2)) {speedLevel++;u8BoutonDroit =PAS_APPUYE;}
+  if (u8BoutonGauche==RELACHE) {speedLevel=0;u8BoutonMilieu=PAS_APPUYE;}
   
   // Fonction speciale
   //if (u8BoutonMilieu==APPUYE_LONG) {u8Etat=0; u8BoutonMilieu=PAS_APPUYE;}

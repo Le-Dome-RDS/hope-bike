@@ -55,19 +55,27 @@ void afficheCourant(){
       Heltec.display->drawString(60, 30, String(u16Courant));
      Heltec.display->drawString(100, 30,"mA");
   }
+  else 
+  if (MODE==0) {
+   Heltec.display->drawProgressBar(5,10,118,10,u16Courant/100);   
+   Heltec.display->setFont(ArialMT_Plain_24);
+   Heltec.display->drawString(20, 24, String(u16Courant/100));
+   Heltec.display->setFont(ArialMT_Plain_10);
+   Heltec.display->drawString(20, 48, "x100 mA");
+  }
 }
 void afficheVitesseVelo(){
   if (MODE==1){
   Heltec.display->drawString(0, 40,"Vitesse:"); 
-    Heltec.display->drawString(60, 40,String(u16VitesseVelo));
+    Heltec.display->drawString(60, 40,String(u16Vitesse));
     Heltec.display->drawString(100, 40, "m/h");
     }
   else
   if (MODE==0){
     Heltec.display->setFont(ArialMT_Plain_24);
-    Heltec.display->drawString(50, 24, String(u16VitesseVelo/1000));
+    Heltec.display->drawString(70, 24, String(u16Vitesse/1000));
     Heltec.display->setFont(ArialMT_Plain_10);
-    Heltec.display->drawString(50, 48, "km/h");
+    Heltec.display->drawString(70, 48, "km/h");
   }
 }
 
@@ -92,11 +100,16 @@ void afficheConsigne(){
   }
   else 
   if (MODE==0) {
-    Heltec.display->drawProgressBar(5,5,118,10,speedLevel*33);
+    //Heltec.display->drawProgressBar(5,5,118,10,speedLevel*33);
+    Heltec.display->drawProgressBar(5,3,118,6,speedLevel*33);
   }
 }
 
-
+void afficheMode(){
+  if (MODE==0) {
+    Heltec.display->drawString(0, 30, String(u8Etat)); 
+  }
+}
 
 void setup_display() {
   //
