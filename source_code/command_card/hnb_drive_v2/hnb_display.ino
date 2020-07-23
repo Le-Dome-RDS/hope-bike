@@ -12,21 +12,36 @@ void afficheEtat(){
     case 2: Heltec.display->drawString(60, 0, "augm.e PWM");break;
     case 3: Heltec.display->drawString(60, 0, "dim. PWM");break;
     case 4: Heltec.display->drawString(60, 0, "regul.");break;
-    case 5: Heltec.display->drawString(60, 0, "Erreur.C");break;
+    case 5: Heltec.display->drawString(60, 0, "Err.");
+       Heltec.display->drawString(100, 0, String(u8Erreur));
+       break;
+    
     }
   }
 }
 
-void afficheCommande(){
-  if (MODE==1){
-  Heltec.display->drawString(0, 10,"Commande:");
-  Heltec.display->drawString(60, 10, String(i16PWM));
+void affichePWM(){
+  if ((MODE==1)||(MODE==3)){
+  Heltec.display->drawString(0, 10,"PWM:");
+  Heltec.display->drawString(50, 10, String(i16PWM));
+  }
+}
+
+void afficheConsigne(){
+  switch(MODE) {
+    case 0:
+     Heltec.display->drawProgressBar(5,3,118,6,speedLevel*33);
+    break;
+    default:
+     Heltec.display->drawString(60, 10,"Consigne:");
+     Heltec.display->drawString(110, 10, String(speedLevel));
+    break;
   }
 }
 
 
 void afficheBatterie(){
-  if (MODE==1){
+  if ((MODE==1)||(MODE==3)){
      Heltec.display->drawString(0, 20,"Batterie:");
      Heltec.display->drawString(60, 20, String(u16Batterie));
      Heltec.display->drawString(100, 20,"mV");
@@ -48,7 +63,7 @@ void afficheBatterie(){
 }
 
 void afficheCourant(){
-  if (MODE==1){
+  if ((MODE==1)||(MODE==3)){
   Heltec.display->drawString(0, 30,"Courant:");
      //if ((u16Courant<0)||(u16Courant>30000)) Heltec.display->drawString(60, 30, "Erreur");
      //else {
@@ -77,6 +92,13 @@ void afficheVitesseVelo(){
     Heltec.display->setFont(ArialMT_Plain_10);
     Heltec.display->drawString(70, 48, "km/h");
   }
+  else 
+  if (MODE==3){
+    Heltec.display->setFont(ArialMT_Plain_24);
+    Heltec.display->drawString(70, 24, String(u16Vitesse/1000));
+    Heltec.display->setFont(ArialMT_Plain_10);
+    Heltec.display->drawString(70, 48, "km/h");
+  }
 }
 
 void affichePedalier(){
@@ -92,36 +114,27 @@ void affichePedalier(){
   }
 }
 
-void afficheConsigne(){
-  if (MODE==1){
-    Heltec.display->drawString(0, 20,"Consigne:");
-    Heltec.display->drawString(60, 20, String(u16Consigne));
-    Heltec.display->drawString(100, 20, "m/h");
-  }
-  else 
-  if (MODE==0) {
-    //Heltec.display->drawProgressBar(5,5,118,10,speedLevel*33);
-    Heltec.display->drawProgressBar(5,3,118,6,speedLevel*33);
-  }
-}
 
-void afficheMode(){
-  if (MODE==0) {
-    Heltec.display->drawString(0, 30, String(u8Etat)); 
-  }
-}
 
 void setup_display() {
   //
   // Heltec.display->init();
-  Heltec.display->flipScreenVertically();
+  
+  
+  //Heltec.display->mirrorScreen();
+  
   Heltec.display->setFont(ArialMT_Plain_16);
   Heltec.display->setTextAlignment(TEXT_ALIGN_CENTER);
   Heltec.display->clear();
+  Heltec.display->resetOrientation();
+  Heltec.display->displayOn();
+  Heltec.display->setBrightness(255);
+  
+  Heltec.display->flipScreenVertically();
+  
   Heltec.display->drawString(64, 4, "Hope");
   Heltec.display->drawString(64, 20, "&");
   Heltec.display->drawString(64, 36, "Bike");
-  
   Heltec.display->display();
   Heltec.display->setTextAlignment(TEXT_ALIGN_LEFT);
  delay(1000);

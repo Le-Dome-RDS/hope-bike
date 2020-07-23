@@ -4,7 +4,7 @@
 #define         APPUYE_LONG 2
 #define         RELACHE     3
 // pin des boutons
-#define BUTTON_GAUCHE 12
+#define BUTTON_GAUCHE 12 
 #define BUTTON_MILIEU 14
 #define BUTTON_DROIT 27
 
@@ -59,12 +59,12 @@ void gestionClavierDroit() {
 }
 
 void gestionClavierGauche() {
-  //lecture==HIGH lorsqu'on appuit : à modifier en fonction de l'interrupteur.
+  //lecture==LOW lorsqu'on appuit : à modifier en fonction de l'interrupteur.
   int lectureGauche=digitalRead(BUTTON_GAUCHE);
-  if ((lectureGauche==HIGH)&&(lectureGaucheAvant==LOW)&&(u8BoutonGauche==PAS_APPUYE))tempsGauche=millis();
-  if (((millis()-tempsGauche)>TEMPS_ANTI_REBOND) && (lectureGauche==HIGH) &&(u8BoutonGauche==PAS_APPUYE))u8BoutonGauche=APPUYE;
-  if (((millis()-tempsGauche)>TEMPS_APPUI_LONG) && (lectureGauche==HIGH) &&(u8BoutonGauche==APPUYE)) u8BoutonGauche=APPUYE_LONG;
-  if (((millis()-tempsGauche)>TEMPS_ANTI_REBOND) && (lectureGauche==LOW)&&(u8BoutonGauche==APPUYE))u8BoutonGauche=RELACHE;
+  if ((lectureGauche==LOW)&&(lectureGaucheAvant==HIGH)&&(u8BoutonGauche==PAS_APPUYE))tempsGauche=millis();
+  if (((millis()-tempsGauche)>TEMPS_ANTI_REBOND) && (lectureGauche==LOW) &&(u8BoutonGauche==PAS_APPUYE))u8BoutonGauche=APPUYE;
+  if (((millis()-tempsGauche)>TEMPS_APPUI_LONG) && (lectureGauche==LOW) &&(u8BoutonGauche==APPUYE)) u8BoutonGauche=APPUYE_LONG;
+  if (((millis()-tempsGauche)>TEMPS_ANTI_REBOND) && (lectureGauche==HIGH)&&(u8BoutonGauche==APPUYE))u8BoutonGauche=RELACHE;
   lectureGaucheAvant=lectureGauche;
 
 }
@@ -73,14 +73,24 @@ void gestionClavier(){
   gestionClavierDroit();
   gestionClavierGauche();
   gestionClavierMilieu();
-
+  if ((MODE==0)||(MODE==1)) {
   // gestion de la vitesse
-  if ((u8BoutonMilieu==RELACHE)&&(speedLevel>=1)) {speedLevel--;u8BoutonMilieu=PAS_APPUYE;}
-  if ((u8BoutonDroit==RELACHE)&&(speedLevel<=2)) {speedLevel++;u8BoutonDroit =PAS_APPUYE;}
-  if (u8BoutonGauche==RELACHE) {speedLevel=0;u8BoutonMilieu=PAS_APPUYE;}
+  if ((u8BoutonGauche==RELACHE)&&(speedLevel>=1)) {speedLevel--;u8BoutonGauche=PAS_APPUYE;}
+  if ((u8BoutonDroit==RELACHE)&&(speedLevel<=3)) {speedLevel++;u8BoutonDroit =PAS_APPUYE;}
+  if (u8BoutonMilieu==RELACHE) {if (DEBUG==1)DEBUG=0; else DEBUG=1;u8BoutonMilieu=PAS_APPUYE;}
+  if (u8BoutonMilieu==APPUYE_LONG) {bPedalage=false;u8BoutonMilieu=PAS_APPUYE;}
   
   // Fonction speciale
-  //if (u8BoutonMilieu==APPUYE_LONG) {u8Etat=0; u8BoutonMilieu=PAS_APPUYE;}
+  if (u8BoutonDroit==APPUYE_LONG) {speedLevel=4; u8BoutonDroit=PAS_APPUYE;}
+  if (u8BoutonGauche==APPUYE_LONG) {speedLevel=0; u8BoutonGauche=PAS_APPUYE;}
+  
+  } else if (MODE==3){ 
+  // gestion de la vitesse
+      if (u8BoutonGauche==RELACHE) {i16PWM=i16PWM-50;u8BoutonGauche=PAS_APPUYE;}
+      if (u8BoutonDroit==RELACHE)  {i16PWM=i16PWM+50;u8BoutonDroit =PAS_APPUYE;}
+      if (u8BoutonDroit==APPUYE_LONG) {i16PWM=0;u8BoutonDroit=PAS_APPUYE;}
+  }
+  
   
   
 }

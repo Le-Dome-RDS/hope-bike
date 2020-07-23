@@ -1,4 +1,7 @@
 void serialDebug() {
+   Serial.print(" k: ");
+  Serial.print(k);
+  
   Serial.print(" u8Etat: ");
   Serial.print(u8Etat);
 
@@ -27,6 +30,11 @@ void serialDebug() {
   Serial.print(" TempsFront:");
   Serial.print(millis()-tempsFront);
 
+  //for (long i=0;i<15;i++) {Serial.print(" ");Serial.print(String(u16adcRoue[i])  )  ; }
+
+
   Serial.print(" u16Batterie:");
   Serial.println(u16Batterie);
+  
+  
 }

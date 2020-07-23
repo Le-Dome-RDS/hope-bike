@@ -10,7 +10,7 @@ void setup_i2c() {
   // --------------------------------------------------Initialisation du DAC 
   
   Heltec.begin(true /*DisplayEnable Enable*/, false /*LoRa Disable*/, true /*Serial Enable*/);
-  
+  Heltec.display->displayOff();
   // --------------------------------------------------Initialisation du DAC 
   dac12bits.begin(0x60);    //12 bits 4096 1,22mV/bit
   dac12bits.setVoltage(0,true);
@@ -55,8 +55,13 @@ void setup_i2c() {
 
 uint16_t litVitesseRoue() { // vaut 0 ou 4095... C'est le calcul effectue dans le loop qui permet de déduire la vitesse du vélo
   uint16_t tmp;
-  if (VERSION_HARD==1) tmp=adc12bits.readADC_SingleEnded(3);
-  else if (VERSION_HARD==2) tmp=adc12bits.readADC_SingleEnded(2);
+  if (MODE!=3) {if (VERSION_HARD==1) tmp=adc12bits.readADC_SingleEnded(3);
+               else if (VERSION_HARD==2) tmp=adc12bits.readADC_SingleEnded(2);}
+  if (MODE==3) {
+    tmp=0;
+    if (k%1==0) tmp=1000;
+    if (k%250==0) tmp=1000;
+  }
   return tmp;
 }
 
@@ -70,11 +75,11 @@ uint16_t litBatterie() {
   
    
   // Il y a une erreur si la tension mesurée est supérieure à 42V ou bien que la différence entre 2 mesures successives est supérieure à 5V 
-  if (k>0) {
-   if ((calcul>25000)&&(calcul<42000)&&(abs(u16Batterie-calcul)<5000)) {u8CompteurErreurBatterie=0; }
-   else {u8CompteurErreurBatterie++;calcul=u16Batterie;}
-   if (u8CompteurErreurBatterie>10) u8Erreur=ERREUR_BATTERIE;
-   }
+  //if (k>0) {
+  // if ((calcul>25000)&&(calcul<42000)&&(abs(u16Batterie-calcul)<5000)) {u8CompteurErreurBatterie=0; }
+  // else {u8CompteurErreurBatterie++;calcul=u16Batterie;}
+  // if (u8CompteurErreurBatterie>10) u8Erreur=ERREUR_BATTERIE;
+  // }
   return(calcul);
   }
 
@@ -83,12 +88,12 @@ uint16_t litBatterie() {
   //calcul = adc12bits.readADC_SingleEnded(1);
   // courant=(N_mesure-N_mesure0)/(0.133*2) pour un résultat en mA.
    calcul = ((adc12bits.readADC_SingleEnded(1)-250)*14);
-   if (k>0) {
+   //if (k>0) {
    // il y a une erreur si le courant mesuré est supéreieur à 35 A et que a différence entre 2 mesures de courant est supérieure à 10A
-   if ((calcul <20000) && (abs(calcul-u16Courant)<10000)) {u8CompteurErreurCourant=0;}
-   else {u8CompteurErreurCourant++;calcul=u16Courant;}
-    if (u8CompteurErreurCourant>10) u8Erreur=ERREUR_COURANT;  
-   }
+   //if ((calcul <20000) && (abs(calcul-u16Courant)<10000)) {u8CompteurErreurCourant=0;}
+   //else {u8CompteurErreurCourant++;calcul=u16Courant;}
+   // if (u8CompteurErreurCourant>10) u8Erreur=ERREUR_COURANT;  
+   //}
    return(calcul);
   
 }
@@ -97,10 +102,12 @@ uint16_t litBatterie() {
   uint16_t calcul;
   if (VERSION_HARD==1) calcul=adc12bits.readADC_SingleEnded(2);
   else if (VERSION_HARD==2) calcul=adc12bits.readADC_SingleEnded(3 );
+  return calcul;
   // il y a une erreur si la mesure est supérieur à 2500 et si la différence entre 2 mesures est supérieur à 500
-  if ((calcul <2500) && (abs(calcul-u16Pedalier)<2000)) {u8CompteurErreurPedalier=0;return calcul;}
-  else u8CompteurErreurPedalier++;
-  if (u8CompteurErreurPedalier>10) u8Erreur=ERREUR_PEDALIER;  
+  
+  //if ((calcul <2500) && (abs(calcul-u16Pedalier)<2000)) {u8CompteurErreurPedalier=0;return calcul;}
+  //else u8CompteurErreurPedalier++;
+  //if (u8CompteurErreurPedalier>10) u8Erreur=ERREUR_PEDALIER;  
   
 }
 
