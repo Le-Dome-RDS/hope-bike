@@ -6,6 +6,7 @@
 #define ETAT_DIMINUE_PWM          3
 #define ETAT_REGULATION           4
 #define ETAT_ERREUR               5
+#define ETAT_ETEINT_MOTEUR        6
 
 
 
