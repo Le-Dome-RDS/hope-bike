@@ -65,24 +65,29 @@ switch(u8Etat){
   case ETAT_ETEINT_MOTEUR:
   if (i16PWM==0) u8Etat=ETAT_ARRET;
   break;
+  default:
+  break;
   }
 }  
-else 
-  // si la vitesse est nulle : on met le vélo à l'arret
+else { // si la vitesse est nulle : on met le vélo à l'arret
   // si la vitesse n'est pas nulle : on passe en mode ETAT_ETEINT_MOTEUR
   if (u16Vitesse>=VITESSE_DEMARRAGE_LIMITE) u8Etat=ETAT_ETEINT_MOTEUR;
   u8Etat=ETAT_ARRET;
+  }
 }
 
 
 void gestionPWM() {
 if ((MODE==0)||(MODE==1)){
-switch(u8Etat){
+  if (i16PWM>1023)i16PWM=1023;
+  if (i16PWM<0) i16PWM=0;
+  dac12bits.setVoltage(4*i16PWM,true);
+  switch(u8Etat){
   case ETAT_ARRET: i16PWM=0; break;
   case ETAT_DEMARRAGE: i16PWM=PWM_DEMARRAGE; break;
-  case ETAT_AUGMENTE_PWM:   i16PWM=i16PWM+2;  break;
-  case ETAT_DIMINUE_PWM:    i16PWM=i16PWM-2;  break;
-  case ETAT_ETEINT_MOTEUR:  i16PWM=i16PWM-5;  break;
+  case ETAT_AUGMENTE_PWM:   i16PWM=i16PWM+5;  break;
+  case ETAT_DIMINUE_PWM:    i16PWM=i16PWM-5;  break;
+  case ETAT_ETEINT_MOTEUR:  i16PWM=i16PWM-10;  break;
   //-----------------------------------------------------------------------------
   // REGULATION en VITESSE, on realise un correcteur proportionnel 
   // PWM=K(Consigne-vitesse rotation roue)
@@ -93,9 +98,6 @@ switch(u8Etat){
   }
   if (i16PWM>1023)i16PWM=1023;
   if (i16PWM<0)i16PWM=0;
-  dac12bits.setVoltage(4*i16PWM,true);
-  if (i16PWM>1023)i16PWM=1023;
-  if (i16PWM<0) i16PWM=0;
   dac12bits.setVoltage(4*i16PWM,true);
 } 
 else if (MODE==3){

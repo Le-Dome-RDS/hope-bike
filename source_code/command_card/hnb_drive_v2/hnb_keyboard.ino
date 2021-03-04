@@ -122,7 +122,7 @@ void gestionClavier(){
       if (u8BoutonGauche==RELACHE) {i16PWM=i16PWM-50;u8BoutonGauche=PAS_APPUYE;}
       if (u8BoutonDroit==RELACHE)  {i16PWM=i16PWM+50;u8BoutonDroit =PAS_APPUYE;}
       if (u8BoutonDroit==APPUYE_LONG) {i16PWM=0;u8BoutonDroit=PAS_APPUYE;}
-      if (u8BoutonMilieu==APPUYE_LONG) {MODE=1;u8BoutonMilieu=PAS_APPUYE;}
+      if (u8BoutonMilieu==APPUYE_LONG) {MODE==1;u8BoutonMilieu=PAS_APPUYE;}
   }
   
   
