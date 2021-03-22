@@ -8,13 +8,16 @@ void afficheEtat(){
   Heltec.display->drawString(0, 0,"Mode:");
   switch(u8Etat){
     case 0: Heltec.display->drawString(60, 0, "Arret");break;
-    case 1: Heltec.display->drawString(60, 0, "Demmar.");break;
-    case 2: Heltec.display->drawString(60, 0, "augm.e PWM");break;
-    case 3: Heltec.display->drawString(60, 0, "dim. PWM");break;
-    case 4: Heltec.display->drawString(60, 0, "regul.");break;
-    case 5: Heltec.display->drawString(60, 0, "Err.");
+    case 1: Heltec.display->drawString(60, 0, "Demar.");break;
+    case 2: Heltec.display->drawString(60, 0, "augm PWM");break;
+    case 3: Heltec.display->drawString(60, 0, "dim PWM");break;
+    case 4: Heltec.display->drawString(60, 0, "regul");break;
+    case 5: Heltec.display->drawString(60, 0, "Erreur");
        Heltec.display->drawString(100, 0, String(u8Erreur));
        break;
+    case 6: Heltec.display->drawString(60, 0, "eteint.mot");break;   
+    case 7: Heltec.display->drawString(60, 0, "rouelib.");break;
+    case 8: Heltec.display->drawString(60, 0, "decroch.");break;
     
     }
   }

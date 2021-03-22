@@ -39,6 +39,9 @@
 // 24/02/2020 : utilisation avec la nouvelle carte développée au GREYC avec base de Heltech32
 // 03/03/2021 : TBD : filtre médian sur la mesure de vitesse et de pédalier
 //              ajout d'un état pour repasser à 0 tranquillement
+// 10/03/2021 : détection de la roue libre
+// 22/03/2021 : modulation du deltaPWM pour limiter l'augmentation du WM pour les courants élevés
+
 
 #include <Adafruit_ADS1015.h>   //Convertisseur analogique-numérique 12 bits
 #include <Adafruit_MCP4725.h>   //convertisseur numérique-analogique 12 bits
@@ -76,6 +79,7 @@ const int VERSION_HARD =1;   //VERSION_HARD=2 pour la version du 24/02/2020
  uint16_t         u16Vitesse     = 0;                       // vitesse de rotation de la roue moyenne
  uint16_t         u16TableauVitesse[5];                      // tableau pour calculer la valeur médiane de la vitesse
  uint16_t         u16TableauPedalier[5];                      // tableau pour calculer la valeur médiane de la vitesse
+ uint16_t         u16TableauCourant[5];                      // tableau pour calculer la valeur médiane de la vitesse
  
  
  boolean          bPedalage=false;                             // Est égale à true si un pédalage est détecté
@@ -84,16 +88,17 @@ const int VERSION_HARD =1;   //VERSION_HARD=2 pour la version du 24/02/2020
  byte             u8Erreur=0;
  
  //Consigne et tension moteur
- // int16_t          i16PWMTemp              = 0;                 // la valeur PWM  temporaire utilisee pour rendre continue PWM
- int16_t          i16PWM = 0;                                  // CRITURE BIONET la valeur PWM  envoyée au moteur 
- uint16_t         u16Consigne = 0;         // consigne choisie
- byte             speedLevel = 0;              // niveau de vitesse
+ int16_t          i16PWMTemp        = 0;         // la valeur PWM  lors de la roue libre
+ int16_t          i16PWM            = 0;                                 
+ uint16_t         u16Consigne       = 0;         // consigne choisie
+ byte             speedLevel        = 0;         // niveau de vitesse
 
  // Divers
  long             tempsFront=millis(); ///  Durée entre le front sur le capteur de vitesse de roue
  long             tempsMesureBatterie=millis(); // Toutes les secondes, on va lire la tension batterie
  long             tempsAfficheEcran=millis(); // Toutes les 20 ms, on met à jour l'écran
  long             tempsRAZEcran=millis();     // Toutes les 10s, on reinitialise l'écran
+ long             tempsDecrochageMoteur=millis(); // En cas de décrochage moteur, on attend 500m pour redemarrer;
  long             k=0;
  bool             bTestLed;
  // Mode de fonctionnement 0=Normal, 1=Debug, 2=test_devices, 3 test 
@@ -159,7 +164,8 @@ if ((MODE==1)||(MODE==0)) {
        
     break;
     case 1: // on mesure le courant;
-       u16Courant=litCourant();
+       ajoute_un_element_et_decale_courant(litCourant());
+       u16Courant=median_courant();;
        
        break;
     case 2: // on mesure le pédalier;
