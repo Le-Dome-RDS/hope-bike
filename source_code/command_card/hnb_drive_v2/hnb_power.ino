@@ -29,26 +29,29 @@ switch(u8Etat){
    break;
   //---------------------- 
   case ETAT_DEMARRAGE:
-   if ( (u16Courant>=COURANT_DEMARRAGE_LIMITE) && (u16Vitesse<VITESSE_DEMARRAGE_LIMITE))
-       u8Etat=ETAT_ARRET; // cas du retropedalage 
-   else if ((u16Vitesse>=VITESSE_DEMARRAGE_LIMITE)&&(bPedalage)) 
+   if ((u16Vitesse>=VITESSE_DEMARRAGE_LIMITE)&&(bPedalage)) {
        u8Etat=ETAT_AUGMENTE_PWM ;
+       // C'est la vitesse du vélo au moment de demarrage qui détermine la valeur du PWM à appliquer
+       i16PWM=vitesse2PWM();
+   }
+   
    else if (!(bPedalage))
        u8Etat=ETAT_ARRET;    
-  break;
+   break;
   //---------------------- 
    case ETAT_AUGMENTE_PWM:
-     if ( (u16Courant<s16courantLimit) && (u16Vitesse>=u16Consigne)) 
+     if (u16Vitesse>=u16Consigne) 
       u8Etat=ETAT_DIMINUE_PWM ;
      else if (u16Courant>=s16courantLimit) 
       u8Etat=ETAT_DIMINUE_PWM ;
      else if (u16Vitesse==0)
       u8Etat=ETAT_ETEINT_MOTEUR;
-     else if (!(bPedalage)) {
+     else if (!(bPedalage)) 
       u8Etat=ETAT_ROUE_LIBRE;
-      i16PWMTemp=i16PWM;
-     }
-     else if ((u16Vitesse<12000)&&(i16PWM>550)){
+      
+     // si le PWM est supérieur de 20% à ce qu'il faudrait et que le courant est faible
+     // A tester
+     else if ( (i16PWM>1.2*vitesse2PWM() ) && (u16Courant<1000 ) ) {
       u8Etat=ETAT_DECROCHAGE_MOTEUR;
       tempsDecrochageMoteur=millis();
      }  
@@ -62,10 +65,8 @@ switch(u8Etat){
       u8Etat=ETAT_ETEINT_MOTEUR;
   else if (i16PWM==0)
       u8Etat=ETAT_ARRET;
-  else if (!(bPedalage)) {
+  else if (!(bPedalage)) 
       u8Etat=ETAT_ROUE_LIBRE;
-      i16PWMTemp=i16PWM;     
-      }
   break;
   //---------------------- 
   case ETAT_ROUE_LIBRE : 
@@ -73,12 +74,18 @@ switch(u8Etat){
       u8Etat=ETAT_ARRET;
   else if (bPedalage){
       u8Etat=ETAT_AUGMENTE_PWM;
-      i16PWM=2*i16PWMTemp/3;
+      //A la sortie de la roue libre, c'est la vitesse du velo qui permet de calculer le pwm à appliquer
+      i16PWM=vitesse2PWM();     
       }    
   break;
-
+  //---------------------- 
   case ETAT_DECROCHAGE_MOTEUR:
-    if ((millis()-tempsDecrochageMoteur)>500) u8Etat=ETAT_ARRET;
+    if ((millis()-tempsDecrochageMoteur)>500) {
+      u8Etat=ETAT_AUGMENTE_PWM;
+      //A la sortie de la roue libre, c'est la vitesse du velo qui permet de calculer le pwm à appliquer
+      // En le divisant par 2 pour limiter la puissance 
+      i16PWM=vitesse2PWM()/2;  
+      }
   break;
   
   //---------------------- 
@@ -98,34 +105,33 @@ if ((MODE==0)||(MODE==1)){
   int16_t i16DeltaPWM=0;
   // Calcul de la valeur du deltaPWM en fonction de la valeur du courant
   // pour limiter le calage du moteur
-  if (u16Courant<1400) i16DeltaPWM=5;   //< 50 W
-  else if  ((u16Courant>=1400)&&(u16Courant<2800)) i16DeltaPWM=4; // < 100 W
-  else if  ((u16Courant>=2800)&&(u16Courant<4200)) i16DeltaPWM=3; // < 150 W
-  else if  ((u16Courant>=4200)&&(u16Courant<5600)) i16DeltaPWM=2; // < 200 W
-  else if  ((u16Courant>=5600)&&(u16Courant<7000)) i16DeltaPWM=1; // < 250 W
+  if (u16Courant<1400) i16DeltaPWM=10;   //< 50 W
+  else if  ((u16Courant>=1400)&&(u16Courant<2100)) i16DeltaPWM=8; // < 50-75 W
+  
+  else if  ((u16Courant>=2100)&&(u16Courant<2800)) i16DeltaPWM=6; // < 75-100 W
+  else if  ((u16Courant>=2800)&&(u16Courant<3500)) i16DeltaPWM=4; // < 100-125 W
+  else if  ((u16Courant>=3500)&&(u16Courant<4200)) i16DeltaPWM=2; // < 125-150 W
+  else if  ((u16Courant>=4200)&&(u16Courant<5600)) i16DeltaPWM=1; // < 200 W
+  else if  ((u16Courant>=5600)&&(u16Courant<7000)) i16DeltaPWM=0; // < 250 W
   else if  (u16Courant>=7000) i16DeltaPWM=0; // > 250 W
   
   
   
   switch(u8Etat){
-  case ETAT_ARRET:         i16PWM=0;              break;
-  case ETAT_DEMARRAGE:     i16PWM=PWM_DEMARRAGE;  break;
-  case ETAT_AUGMENTE_PWM:  i16PWM=i16PWM+i16DeltaPWM;  break;
-  case ETAT_DIMINUE_PWM:   i16PWM=i16PWM-4;       break;
-  case ETAT_ETEINT_MOTEUR: i16PWM=i16PWM-10;      break;
-  case ETAT_ROUE_LIBRE:    i16PWM=0;              break;
-  case ETAT_ERREUR:        i16PWM=0;              break;
-  case ETAT_DECROCHAGE_MOTEUR:        i16PWM=0;              break;
-  default:                                        break;
+  case ETAT_ARRET:         i16PWM=0;                  break;
+  case ETAT_DEMARRAGE:     i16PWM=PWM_DEMARRAGE;      break;
+  case ETAT_AUGMENTE_PWM:  i16PWM=i16PWM+i16DeltaPWM; break;
+  case ETAT_DIMINUE_PWM:   i16PWM=i16PWM-8;           break;
+  case ETAT_ETEINT_MOTEUR: i16PWM=i16PWM-20;          break;
+  case ETAT_ROUE_LIBRE:    i16PWM=0;                  break;
+  case ETAT_ERREUR:        i16PWM=0;                  break;
+  case ETAT_DECROCHAGE_MOTEUR:        i16PWM=0;       break;
+  default:                                            break;
+    }
   }
-  if (i16PWM>1023)i16PWM=1023;
+
+  if (i16PWM>2047)i16PWM=2047;
   if (i16PWM<0)i16PWM=0;
-  dac12bits.setVoltage(4*i16PWM,true);
-} 
-else if (MODE==3){
-  if (i16PWM>1023)i16PWM=1023;
-  if (i16PWM<0)i16PWM=0;
-  dac12bits.setVoltage(4*i16PWM,true);
-  }
+  dac12bits.setVoltage(2*i16PWM,true);
 }
   

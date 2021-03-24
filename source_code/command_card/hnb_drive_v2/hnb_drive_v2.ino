@@ -6,7 +6,7 @@
     Version 0.99  BY JMR
 
     version for hardware v2 by Sylvain Legargy & Jean-Marc Routoure. GREYC.
-    Universite de Caen-Normandie/CNRS. 2020
+    Universite de Caen-Normandie/CNRS. 2021
     
 
     This program is free software: you can redistribute it and/or modify
@@ -88,7 +88,6 @@ const int VERSION_HARD =1;   //VERSION_HARD=2 pour la version du 24/02/2020
  byte             u8Erreur=0;
  
  //Consigne et tension moteur
- int16_t          i16PWMTemp        = 0;         // la valeur PWM  lors de la roue libre
  int16_t          i16PWM            = 0;                                 
  uint16_t         u16Consigne       = 0;         // consigne choisie
  byte             speedLevel        = 0;         // niveau de vitesse
@@ -104,9 +103,9 @@ const int VERSION_HARD =1;   //VERSION_HARD=2 pour la version du 24/02/2020
  // Mode de fonctionnement 0=Normal, 1=Debug, 2=test_devices, 3 test 
  // 1 : debug infos will be printed on the display in a normal behavior
  // 3 : controle du pwm par les touches
- int              MODE=1;             
+ int              MODE=0;             
  int              SERIAL_DEBUG=0;                   // Envoi d'info sur le port série si SERIAL_DEBUG=1;
- int              PEDAL=0;   // bPedalage=true si PEDAL=1 ;  
+ //int              PEDAL=0;   // bPedalage=true si PEDAL=1 ;  
 
 
 
@@ -174,7 +173,7 @@ if ((MODE==1)||(MODE==0)) {
         u16Pedalier=median_pedalier();
               
        if (u16Pedalier>100 && u16Pedalier<600) bPedalage=true;   
-       if (PEDAL==1) bPedalage=true;
+       //if (PEDAL==1) bPedalage=true;
        break;
     case 3:// on gere le clavier et la machine d'état;
        gestionEtat();
@@ -221,7 +220,7 @@ if ((MODE==1)||(MODE==0)) {
       gestionClavier();
       gestionPWM();
       Heltec.display->clear();    //clear the display
-      //afficheVitesseVelo();
+      afficheVitesseVelo();
       afficheBatterie();
       afficheCourant();
       affichePedalier();

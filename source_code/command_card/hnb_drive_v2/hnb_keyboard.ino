@@ -110,17 +110,20 @@ void gestionClavier(){
   // gestion de la vitesse
   if ((u8BoutonGauche==RELACHE)&&(speedLevel>=1)) {speedLevel--;u8BoutonGauche=PAS_APPUYE;}
   if ((u8BoutonDroit==RELACHE)&&(speedLevel<=3)) {speedLevel++;u8BoutonDroit =PAS_APPUYE;}
-  if (u8BoutonMilieu==RELACHE) {if (PEDAL==1)PEDAL=0; else PEDAL=1;u8BoutonMilieu=PAS_APPUYE;}
-  if (u8BoutonMilieu==APPUYE_LONG) {MODE=3;u8BoutonMilieu=PAS_APPUYE;}
+  //if (u8BoutonMilieu==RELACHE) {if (PEDAL==1)PEDAL=0; else PEDAL=1;u8BoutonMilieu=PAS_APPUYE;}
   
   // Fonction speciale
-  if (u8BoutonDroit==APPUYE_LONG) {speedLevel=4; u8BoutonDroit=PAS_APPUYE;}
-  if (u8BoutonGauche==APPUYE_LONG) {speedLevel=0; u8BoutonGauche=PAS_APPUYE;}
+  // appui long sur le bouton du milieu pour passer en mode commande par PWM
+  if (u8BoutonMilieu==APPUYE_LONG) {MODE=3;u8BoutonMilieu=PAS_APPUYE;}
+  // appui long sur le bouton droit pour affichage normal
+  if (u8BoutonDroit==APPUYE_LONG) {MODE=0; u8BoutonDroit=PAS_APPUYE;}
+  // appui long sur le bouton gauche pour affichage detaille
+  if (u8BoutonGauche==APPUYE_LONG) {MODE=1; u8BoutonGauche=PAS_APPUYE;}
   
   } else if (MODE==3){ 
   // gestion de la vitesse
-      if (u8BoutonGauche==RELACHE) {i16PWM=i16PWM-50;u8BoutonGauche=PAS_APPUYE;}
-      if (u8BoutonDroit==RELACHE)  {i16PWM=i16PWM+50;u8BoutonDroit =PAS_APPUYE;}
+      if (u8BoutonGauche==RELACHE) {i16PWM=i16PWM-100;u8BoutonGauche=PAS_APPUYE;}
+      if (u8BoutonDroit==RELACHE)  {i16PWM=i16PWM+1000;u8BoutonDroit =PAS_APPUYE;}
       if (u8BoutonDroit==APPUYE_LONG) {i16PWM=0;u8BoutonDroit=PAS_APPUYE;}
       if (u8BoutonMilieu==APPUYE_LONG) {MODE==1;u8BoutonMilieu=PAS_APPUYE;}
   }
