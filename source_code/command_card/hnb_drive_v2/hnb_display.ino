@@ -33,7 +33,7 @@ void affichePWM(){
 void afficheConsigne(){
   switch(MODE) {
     case 0:
-     Heltec.display->drawProgressBar(5,3,118,10,speedLevel*33);
+     Heltec.display->drawProgressBar(5,3,118,10,speedLevel*25);
     break;
     default:
      Heltec.display->drawString(60, 10,"Consigne:");
@@ -67,17 +67,16 @@ void afficheBatterie(){
 
 void afficheCourant(){
   if ((MODE==1)||(MODE==3)){
-  Heltec.display->drawString(0, 30,"Courant:");
-     //if ((u16Courant<0)||(u16Courant>30000)) Heltec.display->drawString(60, 30, "Erreur");
-     //else {
-      Heltec.display->drawString(60, 30, String(u16Courant));
-     Heltec.display->drawString(100, 30,"mA");
+    Heltec.display->drawString(0, 30,"Courant:");
+     
+    Heltec.display->drawString(60, 30, String(i16Courant));
+    Heltec.display->drawString(100, 30,"mA");
   }
   else 
   if (MODE==0) {
    //Heltec.display->drawProgressBar(5,10,118,10,u16Courant/100);   
    Heltec.display->setFont(ArialMT_Plain_10);
-   Heltec.display->drawString(10, 48, String(u16Courant/100));
+   Heltec.display->drawString(10, 48, String(i16Courant/100));
    Heltec.display->setFont(ArialMT_Plain_10);
    Heltec.display->drawString(40, 48, "x100 mA");
   }

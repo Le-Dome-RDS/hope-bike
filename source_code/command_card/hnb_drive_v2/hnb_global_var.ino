@@ -31,7 +31,7 @@
 #define VITESSE_1   15000  // valeur de la vitesse 1
 #define VITESSE_2   20000  // valeur de la vitesse 2
 #define VITESSE_3   25000  // valeur de la vitesse 3
-#define VITESSE_4   25000  // valeur de la vitesse 4
+#define VITESSE_4   30000  // valeur de la vitesse 4
 
 
 #define COURANT_DEMARRAGE_LIMITE  2000  // valeur limite du courant au demmarrage 
@@ -42,6 +42,17 @@
 // a une vitesse du velo doit correspondre une valeur du PWM
 // On fait l'hypothèse ici que v=25 km/h pour i16PWM=2047
 
-int16_t vitesse2PWM(){
-return(2047*(u16Vitesse/25.0));
+uint16_t PWM2Vitesse(){
+  int16_t calcul;
+  if (i16PWM<=700) calcul=24.44*i16PWM-265;
+  else if (i16PWM>700) calcul = 15.18*i16PWM+265;
+  if (calcul<0) calcul=0;
+return(calcul);
+}
+
+uint16_t vitesse2PWM(){
+  uint16_t calcul;
+  if (u16Vitesse<=16843) calcul=u16Vitesse/24.4+10.8;
+  else if (u16Vitesse>16843)calcul=u16Vitesse/15.2-452;
+  return(calcul);
 }

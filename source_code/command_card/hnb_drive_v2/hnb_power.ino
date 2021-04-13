@@ -7,9 +7,10 @@
  *  de la roue
  */
 
-void gestionEtat(){
+void gestionEtatEtPWM(){
 int s16courantLimit=0;
 
+if ((MODE==0)||(MODE==1)){
 switch (speedLevel){
   case 0: s16courantLimit=COURANT_MOTEUR_LIMITE_0;u16Consigne=0;u8Etat=ETAT_ARRET;break;
   case 1: s16courantLimit=COURANT_MOTEUR_LIMITE_1;u16Consigne=VITESSE_1;break;
@@ -19,7 +20,7 @@ switch (speedLevel){
 }
 
 // protection du moteur
-if (u16Courant>COURANT_MOTEUR_MAX) u8Etat=ETAT_ETEINT_MOTEUR;
+if (i16Courant>COURANT_MOTEUR_MAX) u8Etat=ETAT_ETEINT_MOTEUR;
 
   
 switch(u8Etat){
@@ -32,7 +33,7 @@ switch(u8Etat){
    if ((u16Vitesse>=VITESSE_DEMARRAGE_LIMITE)&&(bPedalage)) {
        u8Etat=ETAT_AUGMENTE_PWM ;
        // C'est la vitesse du vélo au moment de demarrage qui détermine la valeur du PWM à appliquer
-       i16PWM=vitesse2PWM();
+       i16PWM=0.9*vitesse2PWM();
    }
    
    else if (!(bPedalage))
@@ -42,24 +43,26 @@ switch(u8Etat){
    case ETAT_AUGMENTE_PWM:
      if (u16Vitesse>=u16Consigne) 
       u8Etat=ETAT_DIMINUE_PWM ;
-     else if (u16Courant>=s16courantLimit) 
+     else if (i16Courant>=s16courantLimit) 
       u8Etat=ETAT_DIMINUE_PWM ;
      else if (u16Vitesse==0)
       u8Etat=ETAT_ETEINT_MOTEUR;
      else if (!(bPedalage)) 
       u8Etat=ETAT_ROUE_LIBRE;
+     else if ( u16Vitesse<0.8*PWM2Vitesse() ) // Pour limiter le calage  mais est ce que cela marche ? 
+      u8Etat=ETAT_DIMINUE_PWM;
       
      // si le PWM est supérieur de 20% à ce qu'il faudrait et que le courant est faible
      // A tester
-     else if ( (i16PWM>1.2*vitesse2PWM() ) && (u16Courant<1000 ) ) {
-      u8Etat=ETAT_DECROCHAGE_MOTEUR;
-      tempsDecrochageMoteur=millis();
-     }  
+     //else if ( (i16PWM>1.2*vitesse2PWM() ) && (u16Courant<1000 ) ) {
+     // u8Etat=ETAT_DECROCHAGE_MOTEUR;
+     // tempsDecrochageMoteur=millis();
+     //}  
    break;
 
   //---------------------- 
   case ETAT_DIMINUE_PWM:
-  if ( (u16Vitesse<u16Consigne)&&(u16Courant<s16courantLimit) )
+  if ( (u16Vitesse<u16Consigne)&&(i16Courant<s16courantLimit) )
       u8Etat=ETAT_AUGMENTE_PWM;
   else if (u16Vitesse==0)
       u8Etat=ETAT_ETEINT_MOTEUR;
@@ -75,7 +78,7 @@ switch(u8Etat){
   else if (bPedalage){
       u8Etat=ETAT_AUGMENTE_PWM;
       //A la sortie de la roue libre, c'est la vitesse du velo qui permet de calculer le pwm à appliquer
-      i16PWM=vitesse2PWM();     
+      i16PWM=vitesse2PWM()*0.9;     
       }    
   break;
   //---------------------- 
@@ -84,7 +87,7 @@ switch(u8Etat){
       u8Etat=ETAT_AUGMENTE_PWM;
       //A la sortie de la roue libre, c'est la vitesse du velo qui permet de calculer le pwm à appliquer
       // En le divisant par 2 pour limiter la puissance 
-      i16PWM=vitesse2PWM()/2;  
+      i16PWM=vitesse2PWM()*0.9;  
       }
   break;
   
@@ -96,24 +99,17 @@ switch(u8Etat){
   break;
   }
   
-}
 
 
-void gestionPWM() {
-if ((MODE==0)||(MODE==1)){
   
   int16_t i16DeltaPWM=0;
   // Calcul de la valeur du deltaPWM en fonction de la valeur du courant
   // pour limiter le calage du moteur
-  if (u16Courant<1400) i16DeltaPWM=10;   //< 50 W
-  else if  ((u16Courant>=1400)&&(u16Courant<2100)) i16DeltaPWM=8; // < 50-75 W
-  
-  else if  ((u16Courant>=2100)&&(u16Courant<2800)) i16DeltaPWM=6; // < 75-100 W
-  else if  ((u16Courant>=2800)&&(u16Courant<3500)) i16DeltaPWM=4; // < 100-125 W
-  else if  ((u16Courant>=3500)&&(u16Courant<4200)) i16DeltaPWM=2; // < 125-150 W
-  else if  ((u16Courant>=4200)&&(u16Courant<5600)) i16DeltaPWM=1; // < 200 W
-  else if  ((u16Courant>=5600)&&(u16Courant<7000)) i16DeltaPWM=0; // < 250 W
-  else if  (u16Courant>=7000) i16DeltaPWM=0; // > 250 W
+  if (i16Courant<0.2*s16courantLimit) i16DeltaPWM=4;   //< 50 W
+  else if  ((i16Courant>=0.2*s16courantLimit)&&(i16Courant<0.4*s16courantLimit)) i16DeltaPWM=3; 
+  else if  ((i16Courant>=0.4*s16courantLimit)&&(i16Courant<0.6*s16courantLimit)) i16DeltaPWM=2; 
+  else if  ((i16Courant>=0.6*s16courantLimit)&&(i16Courant<0.8*s16courantLimit)) i16DeltaPWM=1; 
+  else if  ((i16Courant>=0.8*s16courantLimit)&&(i16Courant<s16courantLimit)) i16DeltaPWM=0; 
   
   
   
@@ -121,7 +117,7 @@ if ((MODE==0)||(MODE==1)){
   case ETAT_ARRET:         i16PWM=0;                  break;
   case ETAT_DEMARRAGE:     i16PWM=PWM_DEMARRAGE;      break;
   case ETAT_AUGMENTE_PWM:  i16PWM=i16PWM+i16DeltaPWM; break;
-  case ETAT_DIMINUE_PWM:   i16PWM=i16PWM-8;           break;
+  case ETAT_DIMINUE_PWM:   i16PWM=i16PWM-4;           break;
   case ETAT_ETEINT_MOTEUR: i16PWM=i16PWM-20;          break;
   case ETAT_ROUE_LIBRE:    i16PWM=0;                  break;
   case ETAT_ERREUR:        i16PWM=0;                  break;

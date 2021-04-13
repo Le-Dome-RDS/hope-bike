@@ -53,14 +53,14 @@ void gestionClavierMilieu(int type) {
   
   if (type==NORMALLY_OFF) {
     if ((lectureMilieu==HIGH)&&(lectureMilieuAvant==LOW)&&(u8BoutonMilieu==PAS_APPUYE))tempsMilieu=millis();
-    if (((millis()-tempsMilieu)>TEMPS_ANTI_REBOND) && (lectureMilieu==HIGH) &&(u8BoutonMilieu==PAS_APPUYE))u8BoutonMilieu=APPUYE;
-    if (((millis()-tempsMilieu)>TEMPS_APPUI_LONG) && (lectureMilieu==HIGH) &&(u8BoutonMilieu==APPUYE)) u8BoutonMilieu=APPUYE_LONG;
-    if (((millis()-tempsMilieu)>TEMPS_ANTI_REBOND) && (lectureMilieu==LOW)&&(u8BoutonMilieu==APPUYE))u8BoutonMilieu=RELACHE;
+    else if (((millis()-tempsMilieu)>TEMPS_ANTI_REBOND) && (lectureMilieu==HIGH) &&(u8BoutonMilieu==PAS_APPUYE))u8BoutonMilieu=APPUYE;
+    else if (((millis()-tempsMilieu)>TEMPS_APPUI_LONG) && (lectureMilieu==HIGH) &&(u8BoutonMilieu==APPUYE)) {u8BoutonMilieu=APPUYE_LONG;tempsMilieu=millis();}
+    else if (((millis()-tempsMilieu)>TEMPS_ANTI_REBOND) && (lectureMilieu==LOW)&&(u8BoutonMilieu==APPUYE))u8BoutonMilieu=RELACHE;
   } else if (type==NORMALLY_ON) {
     if ((lectureMilieu==LOW)&&(lectureMilieuAvant==HIGH)&&(u8BoutonMilieu==PAS_APPUYE))tempsMilieu=millis();
-    if (((millis()-tempsMilieu)>TEMPS_ANTI_REBOND) && (lectureMilieu==LOW) &&(u8BoutonMilieu==PAS_APPUYE))u8BoutonMilieu=APPUYE;
-    if (((millis()-tempsMilieu)>TEMPS_APPUI_LONG) && (lectureMilieu==LOW) &&(u8BoutonMilieu==APPUYE)) u8BoutonMilieu=APPUYE_LONG;
-    if (((millis()-tempsMilieu)>TEMPS_ANTI_REBOND) && (lectureMilieu==HIGH)&&(u8BoutonMilieu==APPUYE))u8BoutonMilieu=RELACHE;
+    else if (((millis()-tempsMilieu)>TEMPS_ANTI_REBOND) && (lectureMilieu==LOW) &&(u8BoutonMilieu==PAS_APPUYE))u8BoutonMilieu=APPUYE;
+    else if (((millis()-tempsMilieu)>TEMPS_APPUI_LONG) && (lectureMilieu==LOW) &&(u8BoutonMilieu==APPUYE)) {u8BoutonMilieu=APPUYE_LONG;tempsMilieu=millis();}
+    else if (((millis()-tempsMilieu)>TEMPS_ANTI_REBOND) && (lectureMilieu==HIGH)&&(u8BoutonMilieu==APPUYE))u8BoutonMilieu=RELACHE;
   }
   
   lectureMilieuAvant=lectureMilieu;
@@ -73,14 +73,14 @@ void gestionClavierDroit(int type) {
   
   if (type==NORMALLY_OFF) { 
     if ((lectureDroit==HIGH)&&(lectureDroitAvant==LOW)&&(u8BoutonDroit==PAS_APPUYE))tempsDroit=millis();
-    if (((millis()-tempsDroit)>TEMPS_ANTI_REBOND) && (lectureDroit==HIGH) &&(u8BoutonDroit==PAS_APPUYE))u8BoutonDroit=APPUYE;
-    if (((millis()-tempsDroit)>TEMPS_APPUI_LONG) && (lectureDroit==HIGH) &&(u8BoutonDroit==APPUYE)) u8BoutonDroit=APPUYE_LONG;
-    if (((millis()-tempsDroit)>TEMPS_ANTI_REBOND) && (lectureDroit==LOW)&&(u8BoutonDroit==APPUYE))u8BoutonDroit=RELACHE;
+    else if (((millis()-tempsDroit)>TEMPS_ANTI_REBOND) && (lectureDroit==HIGH) &&(u8BoutonDroit==PAS_APPUYE))u8BoutonDroit=APPUYE;
+    else if (((millis()-tempsDroit)>TEMPS_APPUI_LONG) && (lectureDroit==HIGH) &&(u8BoutonDroit==APPUYE)) {u8BoutonDroit=APPUYE_LONG;tempsDroit=millis();}
+    else if (((millis()-tempsDroit)>TEMPS_ANTI_REBOND) && (lectureDroit==LOW)&&(u8BoutonDroit==APPUYE))u8BoutonDroit=RELACHE;
   } else if (type==NORMALLY_ON) { 
     if ((lectureDroit==LOW)&&(lectureDroitAvant==HIGH)&&(u8BoutonDroit==PAS_APPUYE))tempsDroit=millis();
-    if (((millis()-tempsDroit)>TEMPS_ANTI_REBOND) && (lectureDroit==LOW) &&(u8BoutonDroit==PAS_APPUYE))u8BoutonDroit=APPUYE;
-    if (((millis()-tempsDroit)>TEMPS_APPUI_LONG) && (lectureDroit==LOW) &&(u8BoutonDroit==APPUYE)) u8BoutonDroit=APPUYE_LONG;
-    if (((millis()-tempsDroit)>TEMPS_ANTI_REBOND) && (lectureDroit==HIGH)&&(u8BoutonDroit==APPUYE))u8BoutonDroit=RELACHE;
+    else if (((millis()-tempsDroit)>TEMPS_ANTI_REBOND) && (lectureDroit==LOW) &&(u8BoutonDroit==PAS_APPUYE))u8BoutonDroit=APPUYE;
+    else if (((millis()-tempsDroit)>TEMPS_APPUI_LONG) && (lectureDroit==LOW) &&(u8BoutonDroit==APPUYE)) {u8BoutonDroit=APPUYE_LONG;tempsDroit=millis();}
+    else if (((millis()-tempsDroit)>TEMPS_ANTI_REBOND) && (lectureDroit==HIGH)&&(u8BoutonDroit==APPUYE))u8BoutonDroit=RELACHE;
   }  
   lectureDroitAvant=lectureDroit;
 }
@@ -89,14 +89,14 @@ void gestionClavierGauche(int type) {
   int lectureGauche=digitalRead(BUTTON_GAUCHE);
     if (type==NORMALLY_OFF) { 
       if ((lectureGauche==HIGH)&&(lectureGaucheAvant==LOW)&&(u8BoutonGauche==PAS_APPUYE))tempsGauche=millis();
-      if (((millis()-tempsGauche)>TEMPS_ANTI_REBOND) && (lectureGauche==HIGH) &&(u8BoutonGauche==PAS_APPUYE))u8BoutonGauche=APPUYE;
-      if (((millis()-tempsGauche)>TEMPS_APPUI_LONG) && (lectureGauche==HIGH) &&(u8BoutonGauche==APPUYE)) u8BoutonGauche=APPUYE_LONG;
-      if (((millis()-tempsGauche)>TEMPS_ANTI_REBOND) && (lectureGauche==LOW)&&(u8BoutonGauche==APPUYE))u8BoutonGauche=RELACHE;
+      else if (((millis()-tempsGauche)>TEMPS_ANTI_REBOND) && (lectureGauche==HIGH) &&(u8BoutonGauche==PAS_APPUYE))u8BoutonGauche=APPUYE;
+      else if (((millis()-tempsGauche)>TEMPS_APPUI_LONG) && (lectureGauche==HIGH) &&(u8BoutonGauche==APPUYE)) {u8BoutonGauche=APPUYE_LONG;tempsGauche=millis();}
+      else if (((millis()-tempsGauche)>TEMPS_ANTI_REBOND) && (lectureGauche==LOW)&&(u8BoutonGauche==APPUYE))u8BoutonGauche=RELACHE;
     } else if (type==NORMALLY_ON) { 
       if ((lectureGauche==LOW)&&(lectureGaucheAvant==HIGH)&&(u8BoutonGauche==PAS_APPUYE))tempsGauche=millis();
-      if (((millis()-tempsGauche)>TEMPS_ANTI_REBOND) && (lectureGauche==LOW) &&(u8BoutonGauche==PAS_APPUYE))u8BoutonGauche=APPUYE;
-      if (((millis()-tempsGauche)>TEMPS_APPUI_LONG) && (lectureGauche==LOW) &&(u8BoutonGauche==APPUYE)) u8BoutonGauche=APPUYE_LONG;
-      if (((millis()-tempsGauche)>TEMPS_ANTI_REBOND) && (lectureGauche==HIGH)&&(u8BoutonGauche==APPUYE))u8BoutonGauche=RELACHE;
+      else if (((millis()-tempsGauche)>TEMPS_ANTI_REBOND) && (lectureGauche==LOW) &&(u8BoutonGauche==PAS_APPUYE))u8BoutonGauche=APPUYE;
+      else if (((millis()-tempsGauche)>TEMPS_APPUI_LONG) && (lectureGauche==LOW) &&(u8BoutonGauche==APPUYE)) {u8BoutonGauche=APPUYE_LONG;tempsGauche=millis();}
+      else if (((millis()-tempsGauche)>TEMPS_ANTI_REBOND) && (lectureGauche==HIGH)&&(u8BoutonGauche==APPUYE))u8BoutonGauche=RELACHE;
     }  
   lectureGaucheAvant=lectureGauche;
 
@@ -106,26 +106,44 @@ void gestionClavier(){
   gestionClavierDroit(NORMALLY_OFF);
   gestionClavierGauche(NORMALLY_OFF);
   gestionClavierMilieu(NORMALLY_OFF);
+
+  // appui long sur le bouton gauche pour affichage detaille
+  if (u8BoutonMilieu==APPUYE_LONG) {
+    
+    switch(MODE){
+      case 0 : MODE=1;break;
+      case 1 : MODE=3; break;
+      case 3 : MODE=0;break;
+    }
+    u8BoutonMilieu=PAS_APPUYE;
+  }
   if ((MODE==0)||(MODE==1)) {
   // gestion de la vitesse
   if ((u8BoutonGauche==RELACHE)&&(speedLevel>=1)) {speedLevel--;u8BoutonGauche=PAS_APPUYE;}
-  if ((u8BoutonDroit==RELACHE)&&(speedLevel<=3)) {speedLevel++;u8BoutonDroit =PAS_APPUYE;}
-  //if (u8BoutonMilieu==RELACHE) {if (PEDAL==1)PEDAL=0; else PEDAL=1;u8BoutonMilieu=PAS_APPUYE;}
+  else if (u8BoutonGauche==APPUYE_LONG) {speedLevel=0; u8BoutonGauche=PAS_APPUYE;}
+  if ((u8BoutonDroit==RELACHE)&&(speedLevel<=3)) {speedLevel++;u8BoutonDroit=PAS_APPUYE;}
+  else if (u8BoutonDroit==APPUYE_LONG) {speedLevel=3; u8BoutonDroit=PAS_APPUYE;}
+  
+  if (u8BoutonMilieu==RELACHE) {if (MODE==1)MODE=0; else if (MODE==0)MODE=1;u8BoutonMilieu=PAS_APPUYE;}
+  else if (u8BoutonMilieu==APPUYE_LONG) {MODE=3;u8BoutonMilieu=PAS_APPUYE;}
   
   // Fonction speciale
   // appui long sur le bouton du milieu pour passer en mode commande par PWM
-  if (u8BoutonMilieu==APPUYE_LONG) {MODE=3;u8BoutonMilieu=PAS_APPUYE;}
+  //if (u8BoutonMilieu==APPUYE_LONG) {MODE=3;u8BoutonMilieu=PAS_APPUYE;}
   // appui long sur le bouton droit pour affichage normal
-  if (u8BoutonDroit==APPUYE_LONG) {MODE=0; u8BoutonDroit=PAS_APPUYE;}
-  // appui long sur le bouton gauche pour affichage detaille
-  if (u8BoutonGauche==APPUYE_LONG) {MODE=1; u8BoutonGauche=PAS_APPUYE;}
+  //if 
+  //
+  
   
   } else if (MODE==3){ 
-  // gestion de la vitesse
-      if (u8BoutonGauche==RELACHE) {i16PWM=i16PWM-100;u8BoutonGauche=PAS_APPUYE;}
-      if (u8BoutonDroit==RELACHE)  {i16PWM=i16PWM+1000;u8BoutonDroit =PAS_APPUYE;}
-      if (u8BoutonDroit==APPUYE_LONG) {i16PWM=0;u8BoutonDroit=PAS_APPUYE;}
-      if (u8BoutonMilieu==APPUYE_LONG) {MODE==1;u8BoutonMilieu=PAS_APPUYE;}
+  // gestion du PWM
+      if (u8BoutonGauche==RELACHE) {i16PWM=i16PWM-50;u8BoutonGauche=PAS_APPUYE;}
+      else if (u8BoutonGauche==APPUYE_LONG) u8BoutonGauche=PAS_APPUYE;
+      if (u8BoutonDroit==RELACHE)  {i16PWM=i16PWM+50;u8BoutonDroit =PAS_APPUYE;}
+      else if (u8BoutonDroit==APPUYE_LONG) u8BoutonDroit=PAS_APPUYE;
+      if (u8BoutonMilieu==RELACHE) {u8BoutonMilieu=PAS_APPUYE;}
+      else if (u8BoutonMilieu==APPUYE_LONG) {MODE=1;u8BoutonMilieu=PAS_APPUYE;}
+     
   }
   
   

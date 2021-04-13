@@ -47,21 +47,18 @@ void setup_i2c() {
   Wire.setClock(50000);
   delay(1000);
   
-  u16CourantMoteurInitial=250; //0.5V en sortie du capteur orsque le courant est nul.
+  i16CourantMoteurInitial=adc12bits.readADC_SingleEnded(1); 
+  u16adcRoueAvant=litCapteurRoue();
+  
 }
 
 
 
 
-uint16_t litVitesseRoue() { // vaut 0 ou 4095... C'est le calcul effectue dans le loop qui permet de déduire la vitesse du vélo
+uint16_t litCapteurRoue() { // vaut 0 ou 4095... C'est le calcul effectue dans le loop qui permet de déduire la vitesse du vélo
   uint16_t tmp;
-  if (MODE!=3) {if (VERSION_HARD==1) tmp=adc12bits.readADC_SingleEnded(3);
-               else if (VERSION_HARD==2) tmp=adc12bits.readADC_SingleEnded(2);}
-  if (MODE==3) {
-    tmp=0;
-    if (k%1==0) tmp=1000;
-    if (k%250==0) tmp=1000;
-  }
+  if (VERSION_HARD==1) tmp=adc12bits.readADC_SingleEnded(3);
+  else if (VERSION_HARD==2) tmp=adc12bits.readADC_SingleEnded(2);
   return tmp;
 }
 
@@ -70,44 +67,23 @@ uint16_t litVitesseRoue() { // vaut 0 ou 4095... C'est le calcul effectue dans l
 uint16_t litBatterie() {
   uint16_t calcul;
   calcul=adc12bits.readADC_SingleEnded(0)*1000/46;
-
-  // pour k=0; on doit initialiser la variable : 
-  
-   
-  // Il y a une erreur si la tension mesurée est supérieure à 42V ou bien que la différence entre 2 mesures successives est supérieure à 5V 
-  //if (k>0) {
-  // if ((calcul>25000)&&(calcul<42000)&&(abs(u16Batterie-calcul)<5000)) {u8CompteurErreurBatterie=0; }
-  // else {u8CompteurErreurBatterie++;calcul=u16Batterie;}
-  // if (u8CompteurErreurBatterie>10) u8Erreur=ERREUR_BATTERIE;
-  // }
   return(calcul);
   }
 
- uint16_t litCourant() { // Valeur du courant en mA 
-   uint16_t calcul;
-  //calcul = adc12bits.readADC_SingleEnded(1);
-  // courant=(N_mesure-N_mesure0)/(0.133*2) pour un résultat en mA.
-   calcul = ((adc12bits.readADC_SingleEnded(1)-250)*14);
-   //if (k>0) {
-   // il y a une erreur si le courant mesuré est supéreieur à 35 A et que a différence entre 2 mesures de courant est supérieure à 10A
-   //if ((calcul <20000) && (abs(calcul-u16Courant)<10000)) {u8CompteurErreurCourant=0;}
-   //else {u8CompteurErreurCourant++;calcul=u16Courant;}
-   // if (u8CompteurErreurCourant>10) u8Erreur=ERREUR_COURANT;  
-   //}
+ int16_t litCourant() { // Valeur du courant en mA 
+   int16_t calcul;
+  
+   calcul = ((adc12bits.readADC_SingleEnded(1)-i16CourantMoteurInitial)*14);
+   
    return(calcul);
   
 }
 
- uint16_t litPedalier() {
+ uint16_t litCapteurPedalier() {
   uint16_t calcul;
   if (VERSION_HARD==1) calcul=adc12bits.readADC_SingleEnded(2);
   else if (VERSION_HARD==2) calcul=adc12bits.readADC_SingleEnded(3 );
   return calcul;
-  // il y a une erreur si la mesure est supérieur à 2500 et si la différence entre 2 mesures est supérieur à 500
-  
-  //if ((calcul <2500) && (abs(calcul-u16Pedalier)<2000)) {u8CompteurErreurPedalier=0;return calcul;}
-  //else u8CompteurErreurPedalier++;
-  //if (u8CompteurErreurPedalier>10) u8Erreur=ERREUR_PEDALIER;  
   
 }
 

@@ -41,7 +41,7 @@
 //              ajout d'un état pour repasser à 0 tranquillement
 // 10/03/2021 : détection de la roue libre
 // 22/03/2021 : modulation du deltaPWM pour limiter l'augmentation du WM pour les courants élevés
-
+// 12/05/2021 : modification de la mesure de la vitesse
 
 #include <Adafruit_ADS1015.h>   //Convertisseur analogique-numérique 12 bits
 #include <Adafruit_MCP4725.h>   //convertisseur numérique-analogique 12 bits
@@ -73,17 +73,16 @@ const int VERSION_HARD =1;   //VERSION_HARD=2 pour la version du 24/02/2020
  uint16_t         u16adcRoueAvant=0,u16adcRoueMaintenant=0; //valeur lue sur l'ADC
  
  uint16_t         u16Batterie=0;                                //Niveau de la batterie en V;
- uint16_t         u16Courant=0;                                 //Valeur du courant débité en mA;
- uint16_t         u16CourantMoteurInitial     = 0;            // Valeur du courant au démarrage du vélo
+ int16_t          i16Courant=0;                                 //Valeur du courant débité en mA;
+ int16_t          i16CourantMoteurInitial     = 0;            // Valeur du courant au démarrage du vélo
  uint16_t         u16Pedalier=0;                                //Valeur lue sur le pedalier
  uint16_t         u16Vitesse     = 0;                       // vitesse de rotation de la roue moyenne
  uint16_t         u16TableauVitesse[5];                      // tableau pour calculer la valeur médiane de la vitesse
  uint16_t         u16TableauPedalier[5];                      // tableau pour calculer la valeur médiane de la vitesse
- uint16_t         u16TableauCourant[5];                      // tableau pour calculer la valeur médiane de la vitesse
- 
+ int16_t          i16TableauCourant[5];                      // tableau pour calculer la valeur médiane de la vitesse
  
  boolean          bPedalage=false;                             // Est égale à true si un pédalage est détecté
- //Gestion des erreurs
+ //Gestion de l'état et des erreurs
  byte             u8Etat= 0;                                  // Etat du velo
  byte             u8Erreur=0;
  
@@ -103,10 +102,9 @@ const int VERSION_HARD =1;   //VERSION_HARD=2 pour la version du 24/02/2020
  // Mode de fonctionnement 0=Normal, 1=Debug, 2=test_devices, 3 test 
  // 1 : debug infos will be printed on the display in a normal behavior
  // 3 : controle du pwm par les touches
- int              MODE=0;             
+ int              MODE=1;             
  int              SERIAL_DEBUG=0;                   // Envoi d'info sur le port série si SERIAL_DEBUG=1;
- //int              PEDAL=0;   // bPedalage=true si PEDAL=1 ;  
-
+ int              PEDAL=0;   // bPedalage=true si PEDAL=1 ;  
 
 
  //------------------------ Estimation de la vitesse de la roue
@@ -115,44 +113,42 @@ uint16_t estim_vitesse_velo(){
   long mesureVitesse=u16Vitesse;
   byte front=0;
 
-  // Detection du front
-  if (k==0) {
-    u16adcRoueAvant=litVitesseRoue();
-    mesureVitesse=0;
-  }
-  else {
-  u16adcRoueMaintenant=litVitesseRoue();
+  u16adcRoueMaintenant=litCapteurRoue();
   if ((u16adcRoueAvant<100) && (u16adcRoueMaintenant>500) ) front=1; 
   u16adcRoueAvant=u16adcRoueMaintenant;
-  }
   
-  if (front==1) { // On affiche le résultat et on fait clignoter la LED.
+  
+  if (front==1) { 
     long duree=millis()-tempsFront; // durée entre 2 front montant
     tempsFront=millis();
     bTestLed = !bTestLed;   
     digitalWrite(PIN_LED, bTestLed);
-    mesureVitesse=7465000/duree;
-    front=0;
+    mesureVitesse=7465000/duree;litCapteurRoue();
   }
-  // Si pas de front pendant 3s, on fait passer la vitesse à 0;
-  if ((millis()-tempsFront)>3000) mesureVitesse=0;
+  // Si pas de front pendant 1s, on fait passer la vitesse à 0;
+  if ((millis()-tempsFront)>1500) mesureVitesse=0;
   
   return mesureVitesse; 
 }  
   
 
+
+
+
 void loop() {
-// Execution toutes les 5 ms
+  // Toutes les 5 ms, on va lire la vitesse de la roue
+  // l'estimation de la vitesse est le résultat d'un filrage média sur 5 valeurs
+  //ajoute_un_element_et_decale_vitesse_velo();
+  u16Vitesse=estim_vitesse_velo();
+  //median_vitesse_velo();
 
 if ((MODE==1)||(MODE==0)) {
   //**************************************************************************
   // FONCTIONNEMENT NORMAL
   //**************************************************************************
-  // Toutes les 5 ms, on va lire la vitesse de la roue
-  // l'estimation de la vitesse est le résultat d'un filrage média sur 5 valeurs
   
-  ajoute_un_element_et_decale_vitesse_velo(estim_vitesse_velo());
-  u16Vitesse=median_vitesse_velo();
+  
+ 
   
   switch(k%6){
     case 0: //On mesure la batterie toutes les secondes
@@ -164,20 +160,19 @@ if ((MODE==1)||(MODE==0)) {
     break;
     case 1: // on mesure le courant;
        ajoute_un_element_et_decale_courant(litCourant());
-       u16Courant=median_courant();;
+       i16Courant=median_courant();;
        
        break;
     case 2: // on mesure le pédalier;
        bPedalage=false;
-        ajoute_un_element_et_decale_pedalier(litPedalier());
+        ajoute_un_element_et_decale_pedalier(litCapteurPedalier());
         u16Pedalier=median_pedalier();
               
        if (u16Pedalier>100 && u16Pedalier<600) bPedalage=true;   
-       //if (PEDAL==1) bPedalage=true;
+       if (PEDAL==1) bPedalage=true;
        break;
     case 3:// on gere le clavier et la machine d'état;
-       gestionEtat();
-       gestionPWM();
+       gestionEtatEtPWM();
        gestionClavier();
        break;   
     case 4: // ,On affiche les résultats toutes les 20 ms
@@ -215,18 +210,20 @@ if ((MODE==1)||(MODE==0)) {
   // On controle le pwm avec les touches haut et bas
   else if (MODE==3) {
       u16Batterie=litBatterie();
-      u16Courant=litCourant();
-      
-      gestionClavier();
-      gestionPWM();
-      Heltec.display->clear();    //clear the display
-      afficheVitesseVelo();
-      afficheBatterie();
-      afficheCourant();
-      affichePedalier();
-      affichePWM();
-      
-      Heltec.display->display();  
+      i16Courant=litCourant();
+      if ((millis()-tempsAfficheEcran)>20) {
+       tempsAfficheEcran=millis(); 
+       gestionClavier();
+       gestionEtatEtPWM();
+       Heltec.display->clear();    //clear the display
+       afficheVitesseVelo();
+       afficheBatterie();
+       afficheCourant();
+       affichePedalier();
+       affichePWM();
+       Heltec.display->display();
+      }  
+      if ((SERIAL_DEBUG==1))serialDebug();
   }
   
 

@@ -7,6 +7,8 @@ void affiche_tableau_vitesse_velo() {
   Serial.println(u16TableauVitesse[4]);
 }
 
+
+
 ////  --------------
 void ajoute_un_element_et_decale_vitesse_velo(uint16_t nouveau){
   for (int i=0;i<4;i++) u16TableauVitesse[i]=u16TableauVitesse[i+1];
@@ -55,25 +57,25 @@ uint16_t moyenne_pedalier(){
 
 void affiche_tableau_courant() {
   for (int i=0;i<4;i++) {
-    Serial.print(u16TableauCourant[i]);
+    Serial.print(i16TableauCourant[i]);
     Serial.print(" ");
   }
-  Serial.println(u16TableauCourant[4]);
+  Serial.println(i16TableauCourant[4]);
 }
 
-void ajoute_un_element_et_decale_courant(uint16_t nouveau){
-  for (int i=0;i<4;i++) u16TableauCourant[i]=u16TableauCourant[i+1];
-  u16TableauCourant[4]=nouveau;
+void ajoute_un_element_et_decale_courant(int16_t nouveau){
+  for (int i=0;i<4;i++) i16TableauCourant[i]=i16TableauCourant[i+1];
+  i16TableauCourant[4]=nouveau;
 }
 
-uint16_t median_courant(){
-  return (u16TableauCourant[2]);
+int16_t median_courant(){
+  return (i16TableauCourant[2]);
 }
 
-uint16_t moyenne_courant(){
+int16_t moyenne_courant(){
   long calcul=0;
   for (int i=0;i<5;i++){
-    calcul=calcul+u16TableauCourant[i];
+    calcul=calcul+i16TableauCourant[i];
   }
   return(calcul/5);
 }
