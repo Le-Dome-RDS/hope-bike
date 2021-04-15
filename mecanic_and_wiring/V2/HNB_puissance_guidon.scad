@@ -251,14 +251,15 @@ module pieceC(dessine,tol){
     largeurRainurehumiditePieceC=largeurRainureHumidite-tol;
     hauteurRainurehumiditePieceC=hauteurRainureHumidite-tol;
     largeurPieceC=largeurInterieure+2*E;
+    hauteurPieceC=hauteurLaterale+hauteurRainureHumidite-tol;
     largeurRainurePieceC=largeurPieceC-E+largeurRainurehumiditePieceC;
     difference(){
         union(){
             cube([E,largeurPieceC,hauteurTotale]);
             //rainure
-            difference(){
-                  translate([-hauteurRainureHumidite,E/2-largeurRainurehumiditePieceC/2,0])cube([hauteurRainureHumidite,largeurRainurePieceC,hauteurTotale-E/2]);
-                  #translate([-hauteurRainureHumidite,E/2+largeurRainurehumiditePieceC/2,0])cube([hauteurRainureHumidite,largeurRainurePieceC-2*largeurRainurehumiditePieceC,hauteurTotale-E/2-largeurRainurehumiditePieceC]);
+            #difference(){
+                  translate([-hauteurRainurehumiditePieceC,E/2-largeurRainurehumiditePieceC/2,E/2])cube([hauteurRainurehumiditePieceC,largeurRainurePieceC,hauteurPieceC]);
+                  translate([-hauteurRainurehumiditePieceC,E/2+largeurRainurehumiditePieceC/2,E/2])cube([hauteurRainurehumiditePieceC,largeurRainurePieceC-2*largeurRainurehumiditePieceC,hauteurPieceC-largeurRainurehumiditePieceC]);
             }
         //passeFil    
         if (dessine==1)translate([-longueurPasseFil,largeurInterieure/2+E-largeurPasseFil/2,hauteurLaterale])passeFils();
