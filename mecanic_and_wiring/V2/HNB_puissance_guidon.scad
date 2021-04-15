@@ -48,15 +48,15 @@ distanceBordY=4.5;
 
 ////// ------ Dimension pour la carte guidon :
 // largeur de la carte electronique
-largeurCarte=60+0.8;
+//largeurCarte=60+0.8;
 //longueur de la carte électronique
-L=70+0.5;
+//L=70+0.5;
 //
-longueurCarte=L;
+//longueurCarte=L;
 //hauteur de la carte electronique
-hauteurSurCarte=14;
+//hauteurSurCarte=14;
 //hauteur sous la carte electronique
-hauteurSousCarte=2;
+//hauteurSousCarte=2;
 
 // pensez à mettre hauteurPasseFil=0 ci-dessous
 
@@ -65,15 +65,15 @@ hauteurSousCarte=2;
 
 ////// ------ Dimension pour carte puissance 
 // largeur de la carte electronique
-//largeurCarte=46.2;
+largeurCarte=46.2;
 //longueur de la carte électronique
-//L=81.6;
-//longueurCarte=L;
+L=81.6;
+longueurCarte=L;
 //hauteur de la carte electronique
-//hauteurSurCarte=20;
+hauteurSurCarte=20;
 //hauteur sous la carte electronique
 // 19 + E
-//hauteurSousCarte=19+1;
+hauteurSousCarte=19+1;
 // pensez à mettre hauteurPasseFil ci-dessous
 
 
@@ -87,14 +87,16 @@ largeurInterieure=largeurCarte-2*largeurRainureEpoxy;
 
 longueurPasseFil=hauteurRainureHumidite+diametreEcrou;
 
-//hauteurPasseFil=0 pour la carte guidon
-//hauteurPasseFil=epaisseurTeteVis+2*dTrouBord+2*rayonGrosFil+epaisseurEcrou;
-hauteurPasseFil=dTrouBord/2;
+
+hauteurPasseFil=epaisseurTeteVis+2*dTrouBord+2*rayonGrosFil+epaisseurEcrou; // pour le boitier puissande
+//hauteurPasseFil=dTrouBord/2;   // poru la boitier guidon
     
 largeurPasseFil=largeurInterieure-2; // On retire 2 mm pour permettre au couvercle de coulisser sans problème.
 
 
 hauteurTotale=hauteurSurCarte+hauteurSousCarte+hauteurPasseFil+2*E+hauteurEpoxy+2;
+longueurTotale=longueurCarte+2*E;
+largeurTotale=largeurInterieure+2*E;
 hauteurLaterale=hauteurSousCarte+E+hauteurEpoxy+hauteurSurCarte;
 
 
@@ -251,13 +253,13 @@ module pieceC(dessine,tol){
     largeurRainurehumiditePieceC=largeurRainureHumidite-tol;
     hauteurRainurehumiditePieceC=hauteurRainureHumidite-tol;
     largeurPieceC=largeurInterieure+2*E;
-    hauteurPieceC=hauteurLaterale+hauteurRainureHumidite-tol;
+    hauteurPieceC=hauteurLaterale+hauteurPasseFil+hauteurRainureHumidite-tol;
     largeurRainurePieceC=largeurPieceC-E+largeurRainurehumiditePieceC;
     difference(){
         union(){
             cube([E,largeurPieceC,hauteurTotale]);
             //rainure
-            #difference(){
+            difference(){
                   translate([-hauteurRainurehumiditePieceC,E/2-largeurRainurehumiditePieceC/2,E/2])cube([hauteurRainurehumiditePieceC,largeurRainurePieceC,hauteurPieceC]);
                   translate([-hauteurRainurehumiditePieceC,E/2+largeurRainurehumiditePieceC/2,E/2])cube([hauteurRainurehumiditePieceC,largeurRainurePieceC-2*largeurRainurehumiditePieceC,hauteurPieceC-largeurRainurehumiditePieceC]);
             }
@@ -426,16 +428,16 @@ module couvercleGuidon(){
            translate([centreTrouX,centreTrouY,hauteurTotale])cube([longueurEcran+3,largeurEcran+3,8],center=true);
        
         }
+       // finition sur les côtés
+        
         
    }  
     
 }    
 
-
-
-couvercleGuidon();
+//couvercleGuidon();
 //boitierGuidon();
 //boitierPuissance();
-//couverclePuissance();
+couverclePuissance();
 //pieceA(0,0);
 //pieceC(0,0);
